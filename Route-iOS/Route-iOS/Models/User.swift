@@ -15,7 +15,7 @@ class User {
     private var email: String
     private var password: String
     private var zipCode: Int
-    
+    //---------------------------------------------------------------------------
     //Initializer
     init(fName: String, lName: String, email: String, pass: String, zip: Int) {
         self.firstName = fName

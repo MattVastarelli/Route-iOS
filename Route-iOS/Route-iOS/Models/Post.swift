@@ -15,6 +15,7 @@ class Post {
     private var title: String
     private var postBody: String
     
+    //----------------------------------------------------------------
     //Initializer
     init(author: User, title: String, body: String) {
         self.author = author
