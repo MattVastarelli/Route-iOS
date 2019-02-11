@@ -9,17 +9,17 @@
 import Foundation
 
 class Post {
+    //The Post class is the model for posting a given route and
+    //as a super class for the comment, routePost and review subclasses
     private var author: User
     private var title: String
     private var postBody: String
-    private var routeOfPost: Route
     
     //Initializer
-    init(author: User, title: String, body: String, route: Route) {
+    init(author: User, title: String, body: String) {
         self.author = author
         self.title = title
         self.postBody = body
-        self.routeOfPost = route
     }
     //----------------------------------------------------------------
     // Post Getters
@@ -35,10 +35,6 @@ class Post {
         return self.postBody
     }
     
-    func getRouteOfPost() -> Route {
-        return self.routeOfPost
-    }
-    
     // Post Setters
     func setTitle(title: String) {
         self.title = title
@@ -52,8 +48,5 @@ class Post {
         self.author = author
     }
     
-    func setRouteOfPost(route: Route) {
-        self.routeOfPost = route
-    }
     //-----------------------------------------------------------------------
 }

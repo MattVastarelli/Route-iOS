@@ -18,6 +18,7 @@
 		A0A0B65C2211C59400810FDF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B65B2211C59400810FDF /* Review.swift */; };
 		A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B65D2211C5E000810FDF /* Comment.swift */; };
 		A0A0B6602211C5ED00810FDF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B65F2211C5ED00810FDF /* Post.swift */; };
+		A0A0B6622211D88100810FDF /* RoutePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6612211D88100810FDF /* RoutePost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A0A0B65B2211C59400810FDF /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		A0A0B65D2211C5E000810FDF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A0A0B65F2211C5ED00810FDF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A0A0B6612211D88100810FDF /* RoutePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A0A0B65B2211C59400810FDF /* Review.swift */,
 				A0A0B65D2211C5E000810FDF /* Comment.swift */,
 				A0A0B65F2211C5ED00810FDF /* Post.swift */,
+				A0A0B6612211D88100810FDF /* RoutePost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				A0A0B6582211C56800810FDF /* User.swift in Sources */,
 				A0A0B6482211B8F900810FDF /* Route_iOS.xcdatamodeld in Sources */,
+				A0A0B6622211D88100810FDF /* RoutePost.swift in Sources */,
 				A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */,
 				A0A0B6602211C5ED00810FDF /* Post.swift in Sources */,
 				A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */,
