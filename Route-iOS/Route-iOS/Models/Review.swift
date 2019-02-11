@@ -9,7 +9,7 @@
 import Foundation
 
 class Review: Post {
-    //The review class models a given responce/review to the top level/main route
+    //The review class models a given responce/review to the main route and is a top level responce
     private var authorRepling: User
     private var starsGiven: Int
     
@@ -39,4 +39,5 @@ class Review: Post {
     func setStarNum(num: Int) {
         self.starsGiven = num
     }
+    //------------------------------------------------------------
 }
