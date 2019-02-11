@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */; };
 		A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B63F2211B8F900810FDF /* AppDelegate.swift */; };
 		A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6412211B8F900810FDF /* ViewController.swift */; };
 		A0A0B6452211B8F900810FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A0B6432211B8F900810FDF /* Main.storyboard */; };
@@ -19,9 +20,11 @@
 		A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B65D2211C5E000810FDF /* Comment.swift */; };
 		A0A0B6602211C5ED00810FDF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B65F2211C5ED00810FDF /* Post.swift */; };
 		A0A0B6622211D88100810FDF /* RoutePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6612211D88100810FDF /* RoutePost.swift */; };
+		A0E3C0A02212355B00534589 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0E3C09F2212355B00534589 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.release.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A0A0B63C2211B8F900810FDF /* Route-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A0B63F2211B8F900810FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A0B6412211B8F900810FDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		A0A0B65D2211C5E000810FDF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A0A0B65F2211C5ED00810FDF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A0A0B6612211D88100810FDF /* RoutePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePost.swift; sourceTree = "<group>"; };
+		A0E3C09F2212355B00534589 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Route_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96A70871E84EC306D0A1F85 /* Pods-Route-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69695B0FE66F087DFE60D670 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81409A59A5B2F15C6EC9C309 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B96A70871E84EC306D0A1F85 /* Pods-Route-iOS.debug.xcconfig */,
+				4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A0A0B6332211B8F900810FDF = {
 			isa = PBXGroup;
 			children = (
 				A0A0B63E2211B8F900810FDF /* Route-iOS */,
 				A0A0B63D2211B8F900810FDF /* Products */,
+				81409A59A5B2F15C6EC9C309 /* Pods */,
+				69695B0FE66F087DFE60D670 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +102,7 @@
 				A0A0B6492211B8FA00810FDF /* Assets.xcassets */,
 				A0A0B64E2211B8FA00810FDF /* Info.plist */,
 				A0A0B6462211B8F900810FDF /* Route_iOS.xcdatamodeld */,
+				A0E3C09F2212355B00534589 /* GoogleService-Info.plist */,
 			);
 			path = "Route-iOS";
 			sourceTree = "<group>";
@@ -116,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0A0B6512211B8FA00810FDF /* Build configuration list for PBXNativeTarget "Route-iOS" */;
 			buildPhases = (
+				20A2B378283F395648F7C806 /* [CP] Check Pods Manifest.lock */,
 				A0A0B6382211B8F900810FDF /* Sources */,
 				A0A0B6392211B8F900810FDF /* Frameworks */,
 				A0A0B63A2211B8F900810FDF /* Resources */,
+				2EBEB80AF0ADF427AA9AAC5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,12 +198,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A0B64D2211B8FA00810FDF /* LaunchScreen.storyboard in Resources */,
+				A0E3C0A02212355B00534589 /* GoogleService-Info.plist in Resources */,
 				A0A0B64A2211B8FA00810FDF /* Assets.xcassets in Resources */,
 				A0A0B6452211B8F900810FDF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20A2B378283F395648F7C806 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Route-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EBEB80AF0ADF427AA9AAC5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Route-iOS/Pods-Route-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Route-iOS/Pods-Route-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0A0B6382211B8F900810FDF /* Sources */ = {
@@ -332,6 +412,7 @@
 		};
 		A0A0B6522211B8FA00810FDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B96A70871E84EC306D0A1F85 /* Pods-Route-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -349,6 +430,7 @@
 		};
 		A0A0B6532211B8FA00810FDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
