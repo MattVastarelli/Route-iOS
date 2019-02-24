@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3425D06922233547001254F3 /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425D06822233547001254F3 /* SignUpInViewController.swift */; };
 		558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */; };
 		A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B63F2211B8F900810FDF /* AppDelegate.swift */; };
 		A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6412211B8F900810FDF /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3425D06822233547001254F3 /* SignUpInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
 		4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.release.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A0A0B63C2211B8F900810FDF /* Route-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A0B63F2211B8F900810FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +72,6 @@
 				B96A70871E84EC306D0A1F85 /* Pods-Route-iOS.debug.xcconfig */,
 				4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -133,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				A0A0B6412211B8F900810FDF /* ViewController.swift */,
+				3425D06822233547001254F3 /* SignUpInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,6 +336,7 @@
 				A0A0B65A2211C58400810FDF /* Route.swift in Sources */,
 				A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */,
 				A0A0B65C2211C59400810FDF /* Review.swift in Sources */,
+				3425D06922233547001254F3 /* SignUpInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

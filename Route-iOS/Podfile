@@ -9,4 +9,5 @@ target 'Route-iOS' do
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'FirebaseUI'
+pod 'Firebase/Auth'
 end
