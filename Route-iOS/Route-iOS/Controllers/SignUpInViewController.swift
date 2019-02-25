@@ -28,9 +28,9 @@ class SignUpInViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email!, password: password!, completion: {(user, error) in
             if error == nil {
-                self.outputLabel.text = "You are successfully registered"
+                self.outputLabel.text = "Success"
             }else{
-                self.outputLabel.text = "Registration Failed.. Please Try Again"
+                self.outputLabel.text = "Failure"
                 self.failbox.text = error!.localizedDescription
             }
             
