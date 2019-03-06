@@ -22,6 +22,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    //email mattvastarelli@gmail.com
+    //pass addminpass
     
     @IBAction func signInButton(_ sender: UIButton) {
         let email = emailFeild.text
