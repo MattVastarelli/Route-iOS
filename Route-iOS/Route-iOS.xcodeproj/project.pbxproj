@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3425D06922233547001254F3 /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425D06822233547001254F3 /* SignUpInViewController.swift */; };
 		34400D40222355B1003D344F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34400D3F222355B1003D344F /* SignInViewController.swift */; };
+		348ABB6B222F60DB00FC402E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348ABB6A222F60DB00FC402E /* CameraViewController.swift */; };
 		558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */; };
 		A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B63F2211B8F900810FDF /* AppDelegate.swift */; };
 		A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6412211B8F900810FDF /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		3425D06822233547001254F3 /* SignUpInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
 		34400D3F222355B1003D344F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		348ABB6A222F60DB00FC402E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.release.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A0A0B63C2211B8F900810FDF /* Route-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A0B63F2211B8F900810FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				A0A0B6412211B8F900810FDF /* ViewController.swift */,
 				3425D06822233547001254F3 /* SignUpInViewController.swift */,
 				34400D3F222355B1003D344F /* SignInViewController.swift */,
+				348ABB6A222F60DB00FC402E /* CameraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				A0A0B6482211B8F900810FDF /* Route_iOS.xcdatamodeld in Sources */,
 				A0A0B6622211D88100810FDF /* RoutePost.swift in Sources */,
 				A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */,
+				348ABB6B222F60DB00FC402E /* CameraViewController.swift in Sources */,
 				A0A0B6602211C5ED00810FDF /* Post.swift in Sources */,
 				A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */,
 				A0A0B65A2211C58400810FDF /* Route.swift in Sources */,

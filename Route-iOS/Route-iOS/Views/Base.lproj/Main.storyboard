@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WT6-8Z-AMS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="byp-gs-oTI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -226,6 +226,47 @@
             </objects>
             <point key="canvasLocation" x="1815.2" y="-319.79010494752629"/>
         </scene>
+        <!--UserProfile-->
+        <scene sceneID="yUd-SL-WYf">
+            <objects>
+                <viewController storyboardIdentifier="UserProfile" title="UserProfile" id="byp-gs-oTI" customClass="CameraViewController" customModule="Route_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zbd-pe-5gq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xd-QY-orD">
+                                <rect key="frame" x="16" y="70" width="121" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04U-jS-sj2">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Sign Out" id="wSJ-bz-H6Q"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0ej-3r-uIz"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="8BS-6G-B38">
+                                        <connections>
+                                            <action selector="openCamera:" destination="byp-gs-oTI" id="FGM-Lw-2Ym"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="04U-jS-sj2" firstAttribute="trailing" secondItem="ykl-SL-4Lf" secondAttribute="trailing" id="3Ws-eu-B1r"/>
+                            <constraint firstItem="04U-jS-sj2" firstAttribute="leading" secondItem="ykl-SL-4Lf" secondAttribute="leading" id="Z4u-er-zhZ"/>
+                            <constraint firstItem="04U-jS-sj2" firstAttribute="bottom" secondItem="ykl-SL-4Lf" secondAttribute="bottom" id="x6S-WE-H60"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ykl-SL-4Lf"/>
+                    </view>
+                    <connections>
+                        <outlet property="profilePicture" destination="1Xd-QY-orD" id="d8V-pm-ouO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEn-x1-C2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2752.8000000000002" y="-331.48425787106447"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FTM-Bd-dcF">
             <objects>
@@ -242,7 +283,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZA-hE-dem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666.39999999999998" y="143.47826086956522"/>
+            <point key="canvasLocation" x="257" y="-320"/>
         </scene>
     </scenes>
 </document>
