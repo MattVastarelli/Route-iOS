@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Post {
+class Post: NSObject {
     //The Post class is the model for posting a given route and
     //as a super class for the comment, routePost and review subclasses
     private var author: User

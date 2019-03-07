@@ -47,7 +47,7 @@ enum RouteLocationType: String {
 }
 
 // route class
-class Route {
+class Route: NSObject{
     private var terain: String
     private var locationType: String
     private var trafficSpeed: String

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+class User: NSObject {
     //Attributes
     private var firstName: String
     private var lastName: String
