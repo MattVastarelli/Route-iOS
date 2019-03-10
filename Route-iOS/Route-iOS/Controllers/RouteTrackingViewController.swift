@@ -11,7 +11,7 @@ import CoreLocation
 import HealthKit
 import MapKit
 
-class RouteTrackingViewController: UIViewController {
+class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     // labels to display route information
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -20,6 +20,7 @@ class RouteTrackingViewController: UIViewController {
     
     //map view
     @IBOutlet weak var mapView: MKMapView!
+    
     
     // class to hold all the route tracking data
     let routeTracker = RouteTrack()
@@ -49,15 +50,28 @@ class RouteTrackingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        /*
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.activityType = .fitness
+        locationManager.distanceFilter = 10.0
+        locationManager.requestAlwaysAuthorization()
+        */
         
         // map init
         mapView.delegate = self
+        mapView.mapType = MKMapType.standard
+        mapView.showsUserLocation = true
         
     }
     
     // handle the display of the map
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -70,12 +84,27 @@ class RouteTrackingViewController: UIViewController {
         mapView.showsUserLocation = true
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
-        let regionRadius: CLLocationDistance = 1000
-        let coordinateRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+        let regionRadius: CLLocationDistance = 500
+        
+        //this is the line that turns it blue esentualy when the user location is tried to be accessed
+        //let coordinateRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+        //mapView.setRegion(coordinateRegion, animated: true)
+        
+        let coordinateRegion = MKCoordinateRegion(center: CLLocation(latitude: 41.291186, longitude: -72.960406).coordinate,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
         
+        
     }
+    // center the user
+    func centerMapOnLocation(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 500
+        
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -114,11 +143,7 @@ class RouteTrackingViewController: UIViewController {
             distance = 0.0
             locations.removeAll(keepingCapacity: false)
             
-            timer = Timer.scheduledTimer(timeInterval: 1,
-                                         target: self,
-                                         selector: #selector(self.eachSecond),
-                                         userInfo: nil,
-                                         repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond), userInfo: nil, repeats: true)
             startLocationUpdates()
             
             trackingStarted = true;
@@ -134,12 +159,39 @@ class RouteTrackingViewController: UIViewController {
     @IBAction func stopTracking(_ sender: Any) {
     }
     
+    func saveRoute() {
+        /*
+        
+        workout.distance = Float(distance)
+        workout.duration = Int(seconds)
+        workout.timestamp = NSDate()
+        
+        for location in locations {
+            let _location = Location()
+            _location.timestamp = location.timestamp as NSDate
+            _location.latitude = location.coordinate.latitude
+            _location.longitude = location.coordinate.longitude
+            workout.locations.append(_location)
+        }
+        
+        print(workout)
+        
+        if workout.save() {
+            print("Run saved!")
+        } else {
+            print("Could not save the run!")
+        }
+        */
+        
+    }
     
 } //end of controler
 
+
 //
+
 // MARK: - CLLocationManagerDelegate
-extension RouteTrackingViewController: CLLocationManagerDelegate {
+extension RouteTrackingViewController {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -170,6 +222,22 @@ extension RouteTrackingViewController: CLLocationManagerDelegate {
     
 }
 
+extension RouteTrackingViewController {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        if overlay is MKPolyline {
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.strokeColor = UIColor.green
+            polylineRenderer.lineWidth = 3
+            return polylineRenderer
+        }
+        return MKOverlayRenderer()
+    }
+}
+
+/*
 // MARK: - MKMapViewDelegate
 extension RouteTrackingViewController: MKMapViewDelegate {
 }
+*/

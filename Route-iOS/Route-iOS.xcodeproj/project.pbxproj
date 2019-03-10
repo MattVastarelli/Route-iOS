@@ -14,6 +14,7 @@
 		349C8A1C2230B0B9005AB6B8 /* RouteTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1B2230B0B9005AB6B8 /* RouteTrack.swift */; };
 		349C8A1E2230B15B005AB6B8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1D2230B15B005AB6B8 /* Location.swift */; };
 		349C8A202230B4BD005AB6B8 /* RouteTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1F2230B4BD005AB6B8 /* RouteTrackingViewController.swift */; };
+		34A66FEA2235A84600C4FBCE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A66FE92235A84600C4FBCE /* MapKit.framework */; };
 		558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */; };
 		A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B63F2211B8F900810FDF /* AppDelegate.swift */; };
 		A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6412211B8F900810FDF /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		349C8A1B2230B0B9005AB6B8 /* RouteTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrack.swift; sourceTree = "<group>"; };
 		349C8A1D2230B15B005AB6B8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		349C8A1F2230B4BD005AB6B8 /* RouteTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackingViewController.swift; sourceTree = "<group>"; };
+		34A66FE92235A84600C4FBCE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.release.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A0A0B63C2211B8F900810FDF /* Route-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A0B63F2211B8F900810FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */,
+				34A66FEA2235A84600C4FBCE /* MapKit.framework in Frameworks */,
 				349C8A192230A6B1005AB6B8 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +78,7 @@
 		69695B0FE66F087DFE60D670 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34A66FE92235A84600C4FBCE /* MapKit.framework */,
 				349C8A182230A6B1005AB6B8 /* HealthKit.framework */,
 				AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */,
 			);
@@ -200,6 +204,9 @@
 								enabled = 1;
 							};
 							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
