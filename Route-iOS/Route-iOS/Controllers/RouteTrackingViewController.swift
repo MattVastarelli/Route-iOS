@@ -68,17 +68,12 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         mapView.showsUserLocation = true
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-        
-        if let coor = mapView.userLocation.location?.coordinate{
-            mapView.setCenter(coor, animated: true)
-        }
     }
     
     // handle the display of the map
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         //let regionRadius: CLLocationDistance = 500
@@ -131,11 +126,6 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
             startLocationUpdates()
             
             trackingStarted = true;
-        } else {
-            trackingStarted = false
-            //stop the track
-            stopTracking()
-            // save the track
         }
     }
     
@@ -147,50 +137,50 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     func saveRoute() {
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-    }
-    
     /*
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        
-        mapView.mapType = MKMapType.standard
-        
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: locValue, span: span)
-        mapView.setRegion(region, animated: true)
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = locValue
-        annotation.title = "Javed Multani"
-        annotation.subtitle = "current location"
-        mapView.addAnnotation(annotation)
-        
-        //centerMap(locValue)
-    }*/
+     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+     
+     guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+     print("locations = \(locValue.latitude) \(locValue.longitude)")
+     //self.gps.text = "locations = \(locValue.latitude) \(locValue.longitude)"
+     
+     let regionRadius: CLLocationDistance = 250
+     let coordinateRegion = MKCoordinateRegion(center: locValue,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+     mapView.setRegion(coordinateRegion, animated: true)
+     }
+    */
     
-    // MARK - CLLocationManagerDelegate
-    /*func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        defer { currentLocation = locations.last }
-        
-        if currentLocation == nil {
-            // Zoom to user location
-            if let userLocation = locations.last {
-                let viewRegion = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
-                mapView.setRegion(viewRegion, animated: false)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations {
+            if location.horizontalAccuracy < 10 {
+                if self.locations.count > 0 {
+                    distance += location.distance(from: self.locations.last!)
+                    
+                    var coords = [CLLocationCoordinate2D]()
+                    coords.append(self.locations.last!.coordinate)
+                    coords.append(location.coordinate)
+                    
+                    paceLabel.text = String(location.distance(from: self.locations.last!)/(location.timestamp.timeIntervalSince(self.locations.last!.timestamp)))
+                    
+                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 250, longitudinalMeters: 250)
+                    mapView.setRegion(region, animated: true)
+                    
+                    mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
+                }
+                self.locations.append(location)
             }
         }
-    }*/
-    /*
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last{
-            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            self.mapView.setRegion(region, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.strokeColor = UIColor.green
+            polylineRenderer.lineWidth = 3
+            return polylineRenderer
         }
-    }*/
+        return MKOverlayRenderer()
+    }
     
 }
 
