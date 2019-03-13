@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>RouteiOS needs to access to the calander</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>RouteiOS needs to access to the photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>RouteiOS needs to access to the camera</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>RouteiOS needs to access GPS to track and find routes</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3425D06922233547001254F3 /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425D06822233547001254F3 /* SignUpInViewController.swift */; };
-		34400D40222355B1003D344F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34400D3F222355B1003D344F /* SignInViewController.swift */; };
-		348ABB6B222F60DB00FC402E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348ABB6A222F60DB00FC402E /* CameraViewController.swift */; };
+		34937D232238945D0026CEE9 /* RouteTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */; };
+		34937D242238945D0026CEE9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D1F2238945C0026CEE9 /* ProfileViewController.swift */; };
+		34937D252238945D0026CEE9 /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D202238945C0026CEE9 /* SignUpInViewController.swift */; };
+		34937D262238945D0026CEE9 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D212238945C0026CEE9 /* CameraViewController.swift */; };
+		34937D272238945D0026CEE9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D222238945D0026CEE9 /* SignInViewController.swift */; };
+		34937D29223894D30026CEE9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D28223894D30026CEE9 /* PostViewController.swift */; };
+		34937D2B223894FA0026CEE9 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D2A223894FA0026CEE9 /* MyPostViewController.swift */; };
+		34937D2D223895400026CEE9 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D2C223895400026CEE9 /* EditPostViewController.swift */; };
 		349C8A192230A6B1005AB6B8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349C8A182230A6B1005AB6B8 /* HealthKit.framework */; };
 		349C8A1C2230B0B9005AB6B8 /* RouteTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1B2230B0B9005AB6B8 /* RouteTrack.swift */; };
 		349C8A1E2230B15B005AB6B8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1D2230B15B005AB6B8 /* Location.swift */; };
-		349C8A202230B4BD005AB6B8 /* RouteTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1F2230B4BD005AB6B8 /* RouteTrackingViewController.swift */; };
 		34A66FEA2235A84600C4FBCE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A66FE92235A84600C4FBCE /* MapKit.framework */; };
 		558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */; };
 		A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B63F2211B8F900810FDF /* AppDelegate.swift */; };
-		A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6412211B8F900810FDF /* ViewController.swift */; };
 		A0A0B6452211B8F900810FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A0B6432211B8F900810FDF /* Main.storyboard */; };
 		A0A0B6482211B8F900810FDF /* Route_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6462211B8F900810FDF /* Route_iOS.xcdatamodeld */; };
 		A0A0B64A2211B8FA00810FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A0B6492211B8FA00810FDF /* Assets.xcassets */; };
@@ -32,19 +35,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3425D06822233547001254F3 /* SignUpInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
-		34400D3F222355B1003D344F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		348ABB6A222F60DB00FC402E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTrackingViewController.swift; sourceTree = "<group>"; };
+		34937D1F2238945C0026CEE9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		34937D202238945C0026CEE9 /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
+		34937D212238945C0026CEE9 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		34937D222238945D0026CEE9 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		34937D28223894D30026CEE9 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		34937D2A223894FA0026CEE9 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
+		34937D2C223895400026CEE9 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		349C8A182230A6B1005AB6B8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		349C8A1A2230A6B1005AB6B8 /* Route-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Route-iOS.entitlements"; sourceTree = "<group>"; };
 		349C8A1B2230B0B9005AB6B8 /* RouteTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrack.swift; sourceTree = "<group>"; };
 		349C8A1D2230B15B005AB6B8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		349C8A1F2230B4BD005AB6B8 /* RouteTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackingViewController.swift; sourceTree = "<group>"; };
 		34A66FE92235A84600C4FBCE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.release.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A0A0B63C2211B8F900810FDF /* Route-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A0B63F2211B8F900810FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0A0B6412211B8F900810FDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0A0B6442211B8F900810FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0A0B6472211B8F900810FDF /* Route_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Route_iOS.xcdatamodel; sourceTree = "<group>"; };
 		A0A0B6492211B8FA00810FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,11 +161,14 @@
 		A0A0B6562211B96D00810FDF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0A0B6412211B8F900810FDF /* ViewController.swift */,
-				3425D06822233547001254F3 /* SignUpInViewController.swift */,
-				34400D3F222355B1003D344F /* SignInViewController.swift */,
-				348ABB6A222F60DB00FC402E /* CameraViewController.swift */,
-				349C8A1F2230B4BD005AB6B8 /* RouteTrackingViewController.swift */,
+				34937D212238945C0026CEE9 /* CameraViewController.swift */,
+				34937D1F2238945C0026CEE9 /* ProfileViewController.swift */,
+				34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */,
+				34937D222238945D0026CEE9 /* SignInViewController.swift */,
+				34937D202238945C0026CEE9 /* SignUpInViewController.swift */,
+				34937D28223894D30026CEE9 /* PostViewController.swift */,
+				34937D2A223894FA0026CEE9 /* MyPostViewController.swift */,
+				34937D2C223895400026CEE9 /* EditPostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,21 +372,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34400D40222355B1003D344F /* SignInViewController.swift in Sources */,
 				A0A0B6582211C56800810FDF /* User.swift in Sources */,
 				A0A0B6482211B8F900810FDF /* Route_iOS.xcdatamodeld in Sources */,
 				A0A0B6622211D88100810FDF /* RoutePost.swift in Sources */,
-				A0A0B6422211B8F900810FDF /* ViewController.swift in Sources */,
-				348ABB6B222F60DB00FC402E /* CameraViewController.swift in Sources */,
 				349C8A1E2230B15B005AB6B8 /* Location.swift in Sources */,
 				349C8A1C2230B0B9005AB6B8 /* RouteTrack.swift in Sources */,
 				A0A0B6602211C5ED00810FDF /* Post.swift in Sources */,
+				34937D242238945D0026CEE9 /* ProfileViewController.swift in Sources */,
 				A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */,
+				34937D29223894D30026CEE9 /* PostViewController.swift in Sources */,
+				34937D272238945D0026CEE9 /* SignInViewController.swift in Sources */,
+				34937D232238945D0026CEE9 /* RouteTrackingViewController.swift in Sources */,
+				34937D252238945D0026CEE9 /* SignUpInViewController.swift in Sources */,
 				A0A0B65A2211C58400810FDF /* Route.swift in Sources */,
+				34937D262238945D0026CEE9 /* CameraViewController.swift in Sources */,
+				34937D2B223894FA0026CEE9 /* MyPostViewController.swift in Sources */,
 				A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */,
+				34937D2D223895400026CEE9 /* EditPostViewController.swift in Sources */,
 				A0A0B65C2211C59400810FDF /* Review.swift in Sources */,
-				3425D06922233547001254F3 /* SignUpInViewController.swift in Sources */,
-				349C8A202230B4BD005AB6B8 /* RouteTrackingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

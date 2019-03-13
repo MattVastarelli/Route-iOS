@@ -17,11 +17,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // set the defult picture if there is not one saved
-        profilePicture.sd_setImage(with: URL(string: "http://www.accountingweb.co.uk/sites/all/modules/custom/sm_pp_user_profile/img/default-user.png"), placeholderImage: UIImage(named: "placeholder.png"))
-        
-        
+        // this is a comment
+        // how to display a pic
+        //profilePicture.image = UIImage(named: ("icon-user-default"))
     }
     
     // function to handle the slection of a picture
