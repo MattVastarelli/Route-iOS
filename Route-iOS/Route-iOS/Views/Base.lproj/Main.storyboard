@@ -341,8 +341,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KUq-EC-LW3"/>
                                     <barButtonItem title="Stop" id="YRu-l5-ybi">
                                         <connections>
-                                            <action selector="stopTracking:" destination="b4h-8k-yjS" id="dhj-ba-wjc"/>
-                                            <segue destination="hgh-i6-DH2" kind="show" id="eUg-Ig-1Kv"/>
+                                            <action selector="stopTracking:" destination="b4h-8k-yjS" id="Jzq-sI-do1"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

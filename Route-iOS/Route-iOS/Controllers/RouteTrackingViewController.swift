@@ -76,13 +76,6 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //let regionRadius: CLLocationDistance = 500
-        
-        //this is the line that turns it blue esentualy when the user location is tried to be accessed
-        //let coordinateRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
-        
-        //let coordinateRegion = MKCoordinateRegion(center: CLLocation(latitude: 41.291186, longitude: -72.960406).coordinate,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
-        //mapView.setRegion(coordinateRegion, animated: true)
     }
    
     override func viewWillDisappear(_ animated: Bool) {
@@ -129,26 +122,34 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         }
     }
     
-    // stop tracking
-    @IBAction func stopTracking(_ sender: Any) {
-    }
     
+    @IBAction func stopTracking(_ sender: Any) {
+        // save the route
+        saveRoute()
+        // stop the tracking
+        stopTracking()
+        
+        // send user to the post screen
+    }
     
     func saveRoute() {
+       
+        // fill all the data  in to the objects
+        routeTracker.distance = Float(distance)
+        routeTracker.duration = Int(seconds)
+        routeTracker.time = NSDate()
+        
+        for location in locations {
+            let _location = Location()
+            _location.time = location.timestamp as NSDate
+            _location.latitude = location.coordinate.latitude
+            _location.longitude = location.coordinate.longitude
+            routeTracker.locations.append(_location)
+        }
+        
+        // save the object to firebase
+        routeTracker.saveRoute()
     }
-    
-    /*
-     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-     
-     guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-     print("locations = \(locValue.latitude) \(locValue.longitude)")
-     //self.gps.text = "locations = \(locValue.latitude) \(locValue.longitude)"
-     
-     let regionRadius: CLLocationDistance = 250
-     let coordinateRegion = MKCoordinateRegion(center: locValue,latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
-     mapView.setRegion(coordinateRegion, animated: true)
-     }
-    */
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
