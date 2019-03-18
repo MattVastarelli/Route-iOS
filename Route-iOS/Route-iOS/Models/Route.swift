@@ -24,7 +24,7 @@ enum ActivityType: String {
 // route attributes
 enum RouteAttributes: String {
     case potHoles = "Pot Holes"
-    case groomed = "Well Groomed Trail"
+    case groomed = "Groomed Trail"
     case crosswalk = "Crosswalks Available"
     case wellLit = "Good Lighting"
     case poorlyLit = "Poor Lighting"

@@ -14,7 +14,7 @@ class CheckBox: UIButton {
     let checkedImage = UIImage(named: "ic_check_box")! as UIImage
     let uncheckedImage = UIImage(named: "ic_check_box_outline_blank")! as UIImage
     
-    // Bool property
+    // check and un check the boxes by switching the img
     var isChecked: Bool = false {
         didSet{
             if isChecked == true {
@@ -30,6 +30,7 @@ class CheckBox: UIButton {
         self.isChecked = false
     }
     
+    // toggle the check box
     @objc func buttonClicked(sender: UIButton) {
         if sender == self {
             isChecked = !isChecked
