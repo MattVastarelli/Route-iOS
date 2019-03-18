@@ -22,7 +22,7 @@ class RouteTrack: NSObject {
     let db = Firestore.firestore()
     
     //a method to save to firebase
-    func saveRoute() {
+    func saveRoute() -> String {
         var ref: DocumentReference? = nil
         
         var loc: [Any] = []
@@ -47,11 +47,7 @@ class RouteTrack: NSObject {
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
-        
-        
-        print(self.time)
-        print(self.duration)
-        print(self.distance)
-        print(self.locations)
+    
+        return (ref?.documentID)!
     }
 }

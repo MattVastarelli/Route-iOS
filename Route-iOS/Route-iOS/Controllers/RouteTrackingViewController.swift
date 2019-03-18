@@ -33,6 +33,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     // bools to control stop pause start
     var trackingStarted = false
+    var end = false
     
     // map - location manager
     //var locationManager: CLLocationManager!
@@ -42,6 +43,8 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     // tracking data
     lazy var locations = [CLLocation]()
     lazy var timer = Timer()
+    
+    var id: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,8 +120,6 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond), userInfo: nil, repeats: true)
             startLocationUpdates()
-            
-            trackingStarted = true;
         }
     }
     
@@ -128,12 +129,10 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         saveRoute()
         // stop the tracking
         stopTracking()
-        
-        // send user to the post screen
+        self.end = true
     }
     
     func saveRoute() {
-       
         // fill all the data  in to the objects
         routeTracker.distance = Float(distance)
         routeTracker.duration = Int(seconds)
@@ -148,7 +147,16 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         }
         
         // save the object to firebase
-        routeTracker.saveRoute()
+        self.id  = routeTracker.saveRoute()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is PostViewController
+        {
+            let pvc = segue.destination as? PostViewController
+            pvc?.routeID = self.id
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

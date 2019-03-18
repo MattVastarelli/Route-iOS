@@ -9,22 +9,31 @@
 import UIKit
 
 class PostViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    var routeID: String = ""
+    
+    @IBOutlet weak var road: RadioButton!
+    @IBOutlet weak var trail: RadioButton!
+    @IBOutlet weak var path: RadioButton!
+    
+    
+    override func awakeFromNib() {
+        self.view.layoutIfNeeded()
+        
+        road.isSelected = false
+        trail.isSelected = false
+        path.isSelected = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(routeID)
+        
+        road?.alternateButton = [trail!, path!]
+        trail?.alternateButton = [road!, path!]
+        path?.alternateButton = [trail!, road!]
+        
     }
-    */
 
 }
