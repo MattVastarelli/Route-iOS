@@ -1,18 +1,10 @@
-//
-//  CheckBox.swift
-//  Route-iOS
-//
-//  Created by matthew vastarelli on 3/17/19.
-//  Copyright © 2019 Vastarelli, Matthew P. All rights reserved.
-//
-
 import UIKit
 
 class CheckBox: UIButton {
 
     // Images
-    let checkedImage = UIImage(named: "ic_check_box")! as UIImage
-    let uncheckedImage = UIImage(named: "ic_check_box_outline_blank")! as UIImage
+    let checkedImage = UIImage(named: "check-box")! as UIImage
+    let uncheckedImage = UIImage(named: "check-box-empty")! as UIImage
     
     // check and un check the boxes by switching the img
     var isChecked: Bool = false {

@@ -29,6 +29,16 @@ class PostViewController: UIViewController {
     @IBOutlet weak var suburban: RadioButton!
     @IBOutlet weak var park: RadioButton!
     
+    @IBOutlet weak var potHoles: CheckBox!
+    @IBOutlet weak var groomedTrail: CheckBox!
+    @IBOutlet weak var crosswalk: CheckBox!
+    @IBOutlet weak var goodLighting: CheckBox!
+    @IBOutlet weak var poorLOS: CheckBox!
+    @IBOutlet weak var blindCorners: CheckBox!
+    @IBOutlet weak var poorLighting: CheckBox!
+    @IBOutlet weak var goodLOS: CheckBox!
+    
+    
     override func awakeFromNib() {
         self.view.layoutIfNeeded()
         
