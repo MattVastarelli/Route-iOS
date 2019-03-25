@@ -147,7 +147,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         }
         
         // save the object to firebase
-        self.id  = routeTracker.saveRoute()
+        //self.id  = routeTracker.saveRoute()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -155,7 +155,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         if segue.destination is PostViewController
         {
             let pvc = segue.destination as? PostViewController
-            pvc?.routeID = self.id
+            pvc?.route = self.routeTracker
         }
     }
     

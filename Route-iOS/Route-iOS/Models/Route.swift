@@ -3,8 +3,7 @@ import Foundation
 // route types
 enum RouteTerain: String {
     case trail = "Trail"
-    case pavedRoad = "Paved Road"
-    case unpavedRoad = "Unpaved Road"
+    case road = "Road"
     case path = "Path"
 }
 // route type
@@ -93,5 +92,17 @@ class Route: NSObject{
     
     func setAttributes(attr: [String]) {
         self.attributes = attr
+    }
+    
+    func getRouteCollection() -> [String: Any] {
+        let rc = [
+            "terain": self.terain,
+            "location": self.locationType,
+            "traffic speed": self.trafficSpeed,
+            "activity type": self.activityType,
+            "attributes": self.attributes
+            ] as [String : Any]
+        
+        return rc
     }
 }

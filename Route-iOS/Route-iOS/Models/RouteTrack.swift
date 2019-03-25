@@ -42,4 +42,30 @@ class RouteTrack: NSObject {
     
         return (ref?.documentID)!
     }
+    
+    // break the location list in to a çfor firebase
+    func getLocationCollection() -> [Any] {
+        var loc: [Any] = []
+        
+        for l in self.locations {
+            loc.append([
+                "time": l.time,
+                "latitude": l.latitude,
+                "longitude": l.longitude
+                ])
+        }
+        
+        return loc
+    }
+    
+    func getRouteCollection() -> [String: Any] {
+        let routeCollection = [
+            "Date": self.time,
+            "duration": self.duration,
+            "distance": self.distance,
+            "locations": self.getLocationCollection()
+            ] as [String : Any]
+        
+        return routeCollection
+    }
 }

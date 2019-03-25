@@ -509,7 +509,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mr3-3B-4nR"/>
-                                    <barButtonItem title="Post" id="oTY-vE-u2O"/>
+                                    <barButtonItem title="Post" id="oTY-vE-u2O">
+                                        <connections>
+                                            <action selector="postRoute:" destination="hgh-i6-DH2" id="4gD-Qa-X4t"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh6-dc-f3w">
@@ -891,6 +895,8 @@
                         <outlet property="poorLighting" destination="1DO-DL-F3D" id="GA1-vR-WHc"/>
                         <outlet property="potHoles" destination="N5U-9I-PbT" id="gxd-uT-FFE"/>
                         <outlet property="road" destination="RY6-5K-maI" id="bi9-Uf-VT5"/>
+                        <outlet property="routeDescription" destination="A9E-Il-Boz" id="K3Q-k3-SMD"/>
+                        <outlet property="routeTitle" destination="WZg-tE-v9P" id="Ojn-5w-XAw"/>
                         <outlet property="run" destination="KQ8-Uf-xsL" id="x5g-uK-xxy"/>
                         <outlet property="rural" destination="Bdz-fu-UxE" id="FRU-SF-TB3"/>
                         <outlet property="suburban" destination="606-pn-A06" id="Q9Y-hv-BVl"/>

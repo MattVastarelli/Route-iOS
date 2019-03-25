@@ -59,4 +59,13 @@ class User: NSObject {
         self.zipCode = zip
     }
     //----------------------------------------------------------------------------------
+    
+    func getUserCollection() -> [String: String] {
+        let userCollection = [
+            "first name": self.firstName,
+            "last name": self.lastName,
+            ]
+        
+        return userCollection
+    }
 }
