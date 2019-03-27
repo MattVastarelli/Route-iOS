@@ -11,11 +11,11 @@ class RouteTrack: NSObject {
     // fire store
     //FirebaseApp.configure()
 
-    let db = Firestore.firestore()
+    //let db = Firestore.firestore()
     
     //a method to save to firebase
     func saveRoute() -> String {
-        var ref: DocumentReference? = nil
+        /*var ref: DocumentReference? = nil
         
         var loc: [Any] = []
         
@@ -40,7 +40,8 @@ class RouteTrack: NSObject {
             }
         }
     
-        return (ref?.documentID)!
+        return (ref?.documentID)!*/
+        return ""
     }
     
     // break the location list in to a çfor firebase

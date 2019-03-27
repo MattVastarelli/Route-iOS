@@ -30,6 +30,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     var distance = 0.0
     var pace = 0.0
     var split = 0.0
+    var min = 0.00
     
     // bools to control stop pause start
     var trackingStarted = false
@@ -43,6 +44,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     // tracking data
     lazy var locations = [CLLocation]()
     lazy var timer = Timer()
+    
     
     var id: String = ""
     
@@ -97,16 +99,26 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     // update the various timers
     @objc func eachSecond(timer: Timer) {
-        seconds += 1
+        seconds += 1.00
+        
+        //find out the convereted times and distance
+        var dblDistance = distance * 0.0006213712
+        var dblPace = (seconds / 60) / (distance * 0.0006213712)
+        // truncate them to two decmal places
+        let strDistance = String(format: "%.2f", dblDistance)
+        let strPace = String(format: "%.2f", dblPace)
+        // cast them back to doubles
+        dblDistance = Double(strDistance) as! Double
+        dblPace = Double(strPace) as! Double
         
         let secondsQuantity = HKQuantity(unit: HKUnit.second(), doubleValue: seconds)
         timeLabel.text = secondsQuantity.description
         
-        let distanceQuantity = HKQuantity(unit: HKUnit.meter(), doubleValue: distance)
+        let distanceQuantity = HKQuantity(unit: HKUnit.mile(), doubleValue: dblDistance)
         distanceLabel.text = distanceQuantity.description
         
-        let paceUnit = HKUnit.second().unitDivided(by: HKUnit.meter())
-        let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: seconds / distance)
+        let paceUnit = HKUnit.minute().unitDivided(by: HKUnit.mile())
+        let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: dblPace)
         paceLabel.text = paceQuantity.description
     }
     
@@ -125,10 +137,10 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     
     @IBAction func stopTracking(_ sender: Any) {
-        // save the route
-        saveRoute()
         // stop the tracking
         stopTracking()
+        // save the route
+        saveRoute()
         self.end = true
     }
     
@@ -161,17 +173,16 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
-            if location.horizontalAccuracy < 10 {
+            if location.horizontalAccuracy < 20 {
                 if self.locations.count > 0 {
                     distance += location.distance(from: self.locations.last!)
                     
                     var coords = [CLLocationCoordinate2D]()
                     coords.append(self.locations.last!.coordinate)
                     coords.append(location.coordinate)
+
                     
-                    paceLabel.text = String(location.distance(from: self.locations.last!)/(location.timestamp.timeIntervalSince(self.locations.last!.timestamp)))
-                    
-                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 250, longitudinalMeters: 250)
+                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
                     mapView.setRegion(region, animated: true)
                     
                     mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
@@ -182,7 +193,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
+        if (overlay is MKPolyline) && trackingStarted {
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
             polylineRenderer.strokeColor = UIColor.green
             polylineRenderer.lineWidth = 3
