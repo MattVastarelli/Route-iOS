@@ -5,16 +5,14 @@ class User: NSObject {
     private var firstName: String
     private var lastName: String
     private var email: String
-    private var password: String
     private var zipCode: Int
     //---------------------------------------------------------------------------
     //Initializer
-    init(fName: String, lName: String, email: String, pass: String, zip: Int) {
+    init(fName: String, lName: String) {
         self.firstName = fName
         self.lastName = lName
-        self.email = email
-        self.password = pass
-        self.zipCode = zip
+        self.email = "email"
+        self.zipCode = -1
     }
     //--------------------------------------------------------------------------------
     // Account Getters
@@ -30,9 +28,6 @@ class User: NSObject {
         return self.email
     }
     
-    func getPass() -> String {
-        return self.password
-    }
     
     func getZip() -> Int {
         return self.zipCode
@@ -47,10 +42,6 @@ class User: NSObject {
         self.lastName = name
     }
     
-    func setPass(pass: String){
-        self.password = pass
-    }
-    
     func setEmail(email: String){
         self.email = email
     }
@@ -60,11 +51,13 @@ class User: NSObject {
     }
     //----------------------------------------------------------------------------------
     
-    func getUserCollection() -> [String: String] {
+    func getUserCollection() -> [String: Any] {
         let userCollection = [
             "first name": self.firstName,
             "last name": self.lastName,
-            ]
+            "email": self.email,
+            "zip code": self.zipCode,
+            ] as [String : Any]
         
         return userCollection
     }

@@ -31,6 +31,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     var pace = 0.0
     var split = 0.0
     var min = 0.00
+    var lastMile = 0.0
     
     // bools to control stop pause start
     var trackingStarted = false
@@ -120,6 +121,12 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         let paceUnit = HKUnit.minute().unitDivided(by: HKUnit.mile())
         let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: dblPace)
         paceLabel.text = paceQuantity.description
+        
+        //check to see if a mile has past to update the split label
+        if (dblDistance - lastMile) > 1 {
+            lastMile = dblDistance
+            self.splitLabel.text = secondsQuantity.description
+        }
     }
     
     // start tracking
@@ -146,7 +153,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     func saveRoute() {
         // fill all the data  in to the objects
-        routeTracker.distance = Float(distance)
+        routeTracker.distance = Float((distance * 0.0006213712))
         routeTracker.duration = Int(seconds)
         routeTracker.time = NSDate()
         

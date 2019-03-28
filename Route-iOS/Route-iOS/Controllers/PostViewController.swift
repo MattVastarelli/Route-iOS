@@ -198,7 +198,7 @@ class PostViewController: UIViewController {
         let r = Route(terain: ter, locationType: loc, trafficSpeed: speed, activityType: act, attributes: attr)
         
         // get the user //hard codded for now
-        let u = User(fName: "matt", lName: "vastarelli", email: "mvast1@unh.newhaven.edu", pass: "pass", zip: 06473)
+        let u = User(fName: "matt", lName: "vastarelli")
         
         //make the route post obj
         let rPost = RoutePost(author: u, title: title ?? "my route", body: description ?? "my route", route: r, track: self.route)
