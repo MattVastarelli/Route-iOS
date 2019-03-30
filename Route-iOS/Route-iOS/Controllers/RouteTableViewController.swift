@@ -11,7 +11,6 @@ class RouteTableViewController: UITableViewController {
     
     // to store the routes while in memory
     var routeList = [Any]() // switched to any for test
-    var footballTeams = ["Buffalo Bills","New England Patriots","New Jersey Jets","Miami Dolphins","a","b","c","d","e","f","g","h","i","j","k","l"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +61,7 @@ class RouteTableViewController: UITableViewController {
                 }
                 //print(self.routeList.count)
                 //print(self.routeList[0])
+                self.tableView.reloadData()
             }
         }
     }
