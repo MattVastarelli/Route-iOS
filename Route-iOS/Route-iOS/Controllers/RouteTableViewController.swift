@@ -1,40 +1,26 @@
 import UIKit
 import Firebase
 
+class RouteTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var routeTitle: UILabel!
+}
+
+
 class RouteTableViewController: UITableViewController {
-    // firebase refrence
-    var refRoutes: DatabaseReference! //DocumentReference?
     
     // to store the routes while in memory
     var routeList = [Any]() // switched to any for test
-    
+    var footballTeams = ["Buffalo Bills","New England Patriots","New Jersey Jets","Miami Dolphins","a","b","c","d","e","f","g","h","i","j","k","l"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        refRoutes = Database.database().reference().child("RoutePost")// .child("RoutePost") Listener at /RoutePost failed: permission_denied
         
         // can get data
         let db = Firestore.firestore()
         
-        let docRef = db.collection("RoutePost").document("DD1gJ37TxppjCNpmjcLY")
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                //print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
-        }
-        
         let colRef = db.collection("RoutePost")
-        let doc = colRef.getDocuments()
+        _ = colRef.getDocuments()
         {
             (querySnapshot, err) in
             
@@ -44,36 +30,14 @@ class RouteTableViewController: UITableViewController {
             }
             else
             {
-                var count = 0
+                //for all the documents
                 for document in querySnapshot!.documents {
-                    count += 1
-                    print("\(document.documentID) => \(document.data())");
-                }
-                
-                print("Count = \(count)");
-            }
-        }
-        
-        
-        //get the data and put it in an list
-        //observing the data changes
-        refRoutes.observe(DataEventType.value, with: { (snapshot) in
-            
-            //if the reference have some values
-            if snapshot.childrenCount > 0 {
-                
-                //clearing the list
-                self.routeList.removeAll()
-                
-                //iterating through all the values
-                for route in snapshot.children.allObjects as! [DataSnapshot] {
+                   
                     //get data
-                    // the data instance / row in firebase
-                    let routeDataInstance = route.value as? [String: AnyObject]
-                    let name  = routeDataInstance?["author"] as! [NSObject:AnyObject]
-                    //let artistId  = artistObject?["id"]
-                    //let artistGenre = artistObject?["artistGenre"]
+                    let data = document.data() // main document data
                     
+                    let title = data["title"]
+    
                     // create the instance of required obj
                     
                     
@@ -94,14 +58,12 @@ class RouteTableViewController: UITableViewController {
                     
                     //append
                     //self.routeList.append(rp)
-                    self.routeList.append(name)
+                    self.routeList.append(title ?? "default value")
                 }
-                
-                //reloading the tableview
-                //self.tableViewArtists.reloadData()
-                self.tableView.reloadData()
+                //print(self.routeList.count)
+                //print(self.routeList[0])
             }
-        })
+        }
     }
 
     // MARK: - Table view data source
@@ -113,23 +75,32 @@ class RouteTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return routeList.count
+        print("func that gets the count")
+        print(self.routeList.count)
+        return self.routeList.count //1 // this as it stands now returns o
+        //return footballTeams.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "routeID", for: indexPath) as! RouteTableViewCell
 
+        print("Func that adds to cell")
+        print(indexPath.row)
+        print((self.routeList[indexPath.row] as! String))
+        
+        let t = self.routeList[indexPath.row]
         // Configure the cell
         // given routePost
-        let routePost: RoutePost
+        //let routePost: RoutePost
         
         //geven row
         //routePost = routeList[indexPath.row]
         
         //fill the cell
         //cell.routeTitleLbl?.text = routePost.getTitle()
-        cell.routeTitleLbl?.text = "data" //routeList[indexPath.row] as! String
+        cell.routeTitle?.text = t as! String
+        //cell.routeTitle?.text = footballTeams[indexPath.row]
 
         return cell
     }
