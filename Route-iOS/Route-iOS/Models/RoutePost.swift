@@ -24,9 +24,16 @@ class RoutePost: Post {
         return self.routeOfPost
     }
     
+    func getTrackedRoute() -> RouteTrack {
+        return self.trackedRoute
+    }
     // Route Setter
     func setRoute(route: Route) {
         self.routeOfPost = route
+    }
+    
+    func setRouteTrack(routeTrack: RouteTrack) {
+        self.trackedRoute = routeTrack
     }
     
     func save() {

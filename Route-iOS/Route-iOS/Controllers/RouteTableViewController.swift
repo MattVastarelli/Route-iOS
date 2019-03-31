@@ -4,13 +4,16 @@ import Firebase
 class RouteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var routeTitle: UILabel!
+    @IBOutlet weak var routeType: UILabel!
+    @IBOutlet weak var routeDate: UILabel!
+    @IBOutlet weak var routeDistance: UILabel!
 }
 
 
 class RouteTableViewController: UITableViewController {
     
     // to store the routes while in memory
-    var routeList = [Any]() // switched to any for test
+    var routeList = [RoutePost]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,33 +37,51 @@ class RouteTableViewController: UITableViewController {
                    
                     //get data
                     let data = document.data() // main document data
-                    
-                    let title = data["title"]
-    
-                    // create the instance of required obj
-                    
+                    // create the instance of required objs
                     
                     //route track
-                    //let rt = RouteTrack()
-                    //rt.distance = ""
-                    //rt.duration = ""
-                    //rt.time = ""
+                    //route track collection
+                    let rtCollection = data["tracked route"] as! Dictionary<String, AnyObject>
+                    let rt = RouteTrack()
+                    rt.distance = rtCollection["distance"] as! Float
+                    rt.duration = rtCollection["duration"] as! Int
+                    let firTimeStamp = rtCollection["Date"] as! Timestamp
+                    rt.date = firTimeStamp.dateValue() as NSDate
                     
-                    //rt.locations = "" need a method to take the collection to list of location types
+                    
+                    let locs = rtCollection["locations"] as! [NSDictionary]
+                    rt.setLocations(locations: locs)
                     
                     //route
-                    //let r = Route(terain: String, locationType: String, trafficSpeed: String, activityType: String, attributes: [String])
+                    let routeDetCollection = data["route description"] as! Dictionary<String, AnyObject>
+                    let actType = routeDetCollection["activity type"] as! String
+                    let loc = routeDetCollection["location"] as! String
+                    let terain = routeDetCollection["terain"] as! String
+                    let tSpeed = routeDetCollection["traffic speed"] as! String
+                    let attr = routeDetCollection["attributes"] as! [String]
+                    // route instance
+                    let r = Route(terain: terain, locationType: loc, trafficSpeed: tSpeed, activityType: actType, attributes: attr )
+                    
+                    
                     //author
-                    //let auth = User(fName: String, lName: String)
+                    let authColection = data["author"] as! Dictionary<String, AnyObject>
+                    let first = authColection["first name"] as! String
+                    let last = authColection["last name"] as! String
+                    //author isntance
+                    let auth = User(fName: first, lName: last)
+                    
                     //route post
-                    //let rp = RoutePost(author: auth, title: String, body: String, route: r, track: rt)
+                    // root level route post items
+                    let title = data["title"] as! String
+                    let body = data["body"] as! String
+                    
+                    let rp = RoutePost(author: auth, title: title, body: body, route: r, track: rt)
+                    rp.setID(id: document.documentID)
                     
                     //append
-                    //self.routeList.append(rp)
-                    self.routeList.append(title ?? "default value")
+                    self.routeList.append(rp)
                 }
-                //print(self.routeList.count)
-                //print(self.routeList[0])
+                // reload the data because the query takes to long
                 self.tableView.reloadData()
             }
         }
@@ -75,32 +96,24 @@ class RouteTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("func that gets the count")
-        print(self.routeList.count)
         return self.routeList.count //1 // this as it stands now returns o
-        //return footballTeams.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "routeID", for: indexPath) as! RouteTableViewCell
-
-        print("Func that adds to cell")
-        print(indexPath.row)
-        print((self.routeList[indexPath.row] as! String))
-        
-        let t = self.routeList[indexPath.row]
         // Configure the cell
         // given routePost
-        //let routePost: RoutePost
+        let routePost: RoutePost
         
         //geven row
-        //routePost = routeList[indexPath.row]
+        routePost = routeList[indexPath.row]
         
         //fill the cell
-        //cell.routeTitleLbl?.text = routePost.getTitle()
-        cell.routeTitle?.text = t as! String
-        //cell.routeTitle?.text = footballTeams[indexPath.row]
+        cell.routeTitle?.text = routePost.getTitle()
+        cell.routeDate.text = routePost.getTrackedRoute().getDateAsString()
+        cell.routeDistance.text = routePost.getTrackedRoute().getDistanceAsString()
+        cell.routeType.text = routePost.getRoute().getActivityType()
 
         return cell
     }

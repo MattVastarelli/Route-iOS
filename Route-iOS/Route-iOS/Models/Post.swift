@@ -6,6 +6,7 @@ class Post: NSObject {
     private var author: User
     private var title: String
     private var postBody: String
+    private var id: String = ""
     
     //----------------------------------------------------------------
     //Initializer
@@ -20,6 +21,10 @@ class Post: NSObject {
         return self.author
     }
     
+    func getID() -> String {
+        return self.id
+    }
+    
     func getTitle() -> String {
         return self.title
     }
@@ -31,6 +36,10 @@ class Post: NSObject {
     // Post Setters
     func setTitle(title: String) {
         self.title = title
+    }
+    
+    func setID(id: String) {
+        self.id = id
     }
     
     func setPostBody(body: String) {

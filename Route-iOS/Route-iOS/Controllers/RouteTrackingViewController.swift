@@ -155,7 +155,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         // fill all the data  in to the objects
         routeTracker.distance = Float((distance * 0.0006213712))
         routeTracker.duration = Int(seconds)
-        routeTracker.time = NSDate()
+        routeTracker.date = NSDate()
         
         for location in locations {
             let _location = Location()

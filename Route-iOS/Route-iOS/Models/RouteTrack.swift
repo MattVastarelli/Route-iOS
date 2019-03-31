@@ -2,16 +2,28 @@ import UIKit
 import Firebase
 
 class RouteTrack: NSObject {
-    var time = NSDate()
+    var date = NSDate()
     var duration = 0
     var distance: Float = 0.0
      // list of locations - the route being tracked
     var locations = [Location]()
     
-    // fire store
-    //FirebaseApp.configure()
-
-    //let db = Firestore.firestore()
+    
+    func setLocations(locations: [NSDictionary]) {
+        //function to recive the location collection
+        //from firebase and transform it it to a
+        //list of locations
+        
+        for loc in locations {
+            let locationObj = Location()
+            let firTimeStamp = loc["time"] as! Timestamp
+            locationObj.time = firTimeStamp.dateValue() as NSDate
+            locationObj.latitude = loc["latitude"] as! Double
+            locationObj.longitude = loc["longitude"] as! Double
+            
+            self.locations.append(locationObj)
+        }
+    }
     
     // break the location list in to a collection for firebase
     func getLocationCollection() -> [Any] {
@@ -30,7 +42,7 @@ class RouteTrack: NSObject {
     
     func getRouteCollection() -> [String: Any] {
         let routeCollection = [
-            "Date": self.time,
+            "Date": self.date,
             "duration": self.duration,
             "distance": self.distance,
             "locations": self.getLocationCollection()
@@ -39,34 +51,16 @@ class RouteTrack: NSObject {
         return routeCollection
     }
     
-    //a method to save to firebase
-    func saveRoute() -> String {
-        /*var ref: DocumentReference? = nil
-         
-         var loc: [Any] = []
-         
-         for l in self.locations {
-         loc.append([
-         "time": l.time,
-         "latitude": l.latitude,
-         "longitude": l.longitude
-         ])
-         }
-         
-         ref = db.collection("TrackedRoutes").addDocument(data: [
-         "Date": self.time,
-         "duration": self.duration,
-         "distance": self.distance,
-         "locations": loc
-         ]) { err in
-         if let err = err {
-         print("Error adding document: \(err)")
-         } else {
-         print("Document added with ID: \(ref!.documentID)")
-         }
-         }
-         
-         return (ref?.documentID)!*/
-        return ""
+    func getDateAsString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dateString = dateFormatter.string(from: self.date as Date)
+        
+        return dateString
+    }
+    
+    func getDistanceAsString() -> String {
+        return String(format: "%.2f", self.distance) + " mi."
     }
 }
