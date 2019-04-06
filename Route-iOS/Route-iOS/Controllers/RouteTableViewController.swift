@@ -18,7 +18,7 @@ class RouteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // can get data
+        //  get data
         let db = Firestore.firestore()
         
         let colRef = db.collection("RoutePost")

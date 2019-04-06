@@ -142,6 +142,9 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         }
     }
     
+    func segueToHomeVC (_ sender: Any) {
+        performSegue(withIdentifier: "fromGPSToHome", sender: self)
+    }
     
     @IBAction func stopTracking(_ sender: Any) {
         // stop the tracking
@@ -149,6 +152,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         // save the route
         saveRoute()
         self.end = true
+        self.segueToHomeVC(self)
     }
     
     func saveRoute() {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3404C07B225137EA003029AA /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404C07A225137E9003029AA /* homeViewController.swift */; };
+		3409B0AD22582AE400699CB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409B0AC22582AE400699CB7 /* HomeViewController.swift */; };
 		348F4E65223F12B9002BBD47 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348F4E64223F12B9002BBD47 /* CheckBox.swift */; };
 		348F4E67223F12D2002BBD47 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348F4E66223F12D2002BBD47 /* RadioButton.swift */; };
 		34937D232238945D0026CEE9 /* RouteTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */; };
@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3404C07A225137E9003029AA /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		3409B0AC22582AE400699CB7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		348F4E64223F12B9002BBD47 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		348F4E66223F12D2002BBD47 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTrackingViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 				34937D2A223894FA0026CEE9 /* MyPostViewController.swift */,
 				34937D2C223895400026CEE9 /* EditPostViewController.swift */,
 				34F8B511224C52DD00853F8D /* RouteTableViewController.swift */,
-				3404C07A225137E9003029AA /* homeViewController.swift */,
+				3409B0AC22582AE400699CB7 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -391,6 +391,7 @@
 				349C8A1C2230B0B9005AB6B8 /* RouteTrack.swift in Sources */,
 				A0A0B6602211C5ED00810FDF /* Post.swift in Sources */,
 				34937D242238945D0026CEE9 /* ProfileViewController.swift in Sources */,
+				3409B0AD22582AE400699CB7 /* HomeViewController.swift in Sources */,
 				348F4E67223F12D2002BBD47 /* RadioButton.swift in Sources */,
 				348F4E65223F12B9002BBD47 /* CheckBox.swift in Sources */,
 				A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */,
@@ -403,7 +404,6 @@
 				34937D262238945D0026CEE9 /* CameraViewController.swift in Sources */,
 				34937D2B223894FA0026CEE9 /* MyPostViewController.swift in Sources */,
 				A0A0B6402211B8F900810FDF /* AppDelegate.swift in Sources */,
-				3404C07B225137EA003029AA /* homeViewController.swift in Sources */,
 				34937D2D223895400026CEE9 /* EditPostViewController.swift in Sources */,
 				A0A0B65C2211C59400810FDF /* Review.swift in Sources */,
 			);

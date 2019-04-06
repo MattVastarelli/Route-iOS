@@ -1,15 +1,16 @@
 //
-//  homeViewController.swift
+//  HomeViewController.swift
 //  Route-iOS
 //
-//  Created by matthew vastarelli on 3/31/19.
+//  Created by matthew vastarelli on 4/5/19.
 //  Copyright © 2019 Vastarelli, Matthew P. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class homeViewController: UIViewController {
-
+class HomeViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
