@@ -58,6 +58,7 @@ class RoutePost: Post {
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
+                self.setID(id: ref!.documentID)
                 print("Document added with ID: \(ref!.documentID)")
             }
         }

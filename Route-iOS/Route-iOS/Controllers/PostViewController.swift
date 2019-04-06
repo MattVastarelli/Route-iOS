@@ -12,6 +12,8 @@ class PostViewController: UIViewController {
     
     // empty route tracker to recive the tracked route from the tracking view
     var route: RouteTrack = RouteTrack()
+    var id = ""
+    var container = Array<Any>()
     
     @IBOutlet weak var routeTitle: UITextField!
     @IBOutlet weak var routeDescription: UITextView!
@@ -182,6 +184,10 @@ class PostViewController: UIViewController {
         return attr
     }
     
+    func segueToPostViewVC (_ sender: Any) {
+        performSegue(withIdentifier: "fromPostToViewPost", sender: self)
+    }
+    
     @IBAction func postRoute(_ sender: Any) {
         
         //get the data from the form
@@ -205,9 +211,23 @@ class PostViewController: UIViewController {
         
         // save the post
         rPost.save()
+        self.container.append(rPost)
         
-        //redirect to submitted screen
+        self.id = rPost.getID()
         
+        self.segueToPostViewVC(self)
+        /*DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8), execute: {
+            // Put your code which should be executed with a delay here
+         
+        })*/
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+       
+        let destinationVC = segue.destination as! MyPostViewController
+        destinationVC.container = self.container
     }
     
 }

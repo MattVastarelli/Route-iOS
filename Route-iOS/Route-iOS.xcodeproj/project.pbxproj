@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3409B0AD22582AE400699CB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409B0AC22582AE400699CB7 /* HomeViewController.swift */; };
+		3409B0B1225836EC00699CB7 /* PostWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409B0B0225836EC00699CB7 /* PostWrapper.swift */; };
 		348F4E65223F12B9002BBD47 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348F4E64223F12B9002BBD47 /* CheckBox.swift */; };
 		348F4E67223F12D2002BBD47 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348F4E66223F12D2002BBD47 /* RadioButton.swift */; };
 		34937D232238945D0026CEE9 /* RouteTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3409B0AC22582AE400699CB7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3409B0B0225836EC00699CB7 /* PostWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWrapper.swift; sourceTree = "<group>"; };
 		348F4E64223F12B9002BBD47 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		348F4E66223F12D2002BBD47 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTrackingViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				349C8A1D2230B15B005AB6B8 /* Location.swift */,
 				348F4E64223F12B9002BBD47 /* CheckBox.swift */,
 				348F4E66223F12D2002BBD47 /* RadioButton.swift */,
+				3409B0B0225836EC00699CB7 /* PostWrapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */,
 				34937D29223894D30026CEE9 /* PostViewController.swift in Sources */,
 				34F8B512224C52DD00853F8D /* RouteTableViewController.swift in Sources */,
+				3409B0B1225836EC00699CB7 /* PostWrapper.swift in Sources */,
 				34937D272238945D0026CEE9 /* SignInViewController.swift in Sources */,
 				34937D232238945D0026CEE9 /* RouteTrackingViewController.swift in Sources */,
 				34937D252238945D0026CEE9 /* SignUpInViewController.swift in Sources */,

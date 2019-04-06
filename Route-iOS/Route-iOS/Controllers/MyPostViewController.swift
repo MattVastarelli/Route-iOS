@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class MyPostViewController: UIViewController {
+    
+    var myPost: String = ""
+    var container = Array<Any>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print("container", container)
     }
     
 

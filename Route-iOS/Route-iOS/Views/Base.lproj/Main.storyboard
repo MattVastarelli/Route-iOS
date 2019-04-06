@@ -634,7 +634,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A9E-Il-Boz">
                                 <rect key="frame" x="16" y="124" width="343" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93130667098445596" green="0.93130667098445596" blue="0.93130667098445596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -972,6 +972,7 @@
                         <outlet property="trail" destination="ogu-fu-CgM" id="q1n-9D-BJ3"/>
                         <outlet property="urban" destination="TKc-7X-lnq" id="WD5-WR-BU6"/>
                         <outlet property="walk" destination="ZWG-mf-Dmj" id="zSr-6S-tfu"/>
+                        <segue destination="Bky-b9-1yt" kind="show" identifier="fromPostToViewPost" id="0BC-yt-uSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm6-iN-apC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1572,8 +1573,8 @@
         <image name="submit" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aVh-ue-sE8"/>
-        <segue reference="XWm-DR-0Py"/>
-        <segue reference="pK5-uy-seL"/>
+        <segue reference="0BC-yt-uSw"/>
+        <segue reference="XDI-M5-fDm"/>
+        <segue reference="lzZ-Co-Hdp"/>
     </inferredMetricsTieBreakers>
 </document>
