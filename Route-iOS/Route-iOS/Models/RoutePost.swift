@@ -60,6 +60,9 @@ class RoutePost: Post {
             } else {
                 self.setID(id: ref!.documentID)
                 print("Document added with ID: \(ref!.documentID)")
+                // possible call update to user
+                // add the route to the user
+                super.getAuthor().addRoute(id: ref!.documentID)
             }
         }
     }

@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import HealthKit
 import MapKit
+import Firebase
 
 class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     // labels to display route information
@@ -21,6 +22,8 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     //map view
     @IBOutlet weak var mapView: MKMapView!
     
+    // firebase auth handler
+    var handle: AuthStateDidChangeListenerHandle?
     
     // class to hold all the route tracking data
     let routeTracker = RouteTrack()
@@ -75,10 +78,22 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
     }
+    func segueToSignupInVC (_ sender: Any) {
+        performSegue(withIdentifier: "fromGPStoAuth", sender: self)
+    }
     
     // handle the display of the map
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if ((user) != nil) {
+                print(user?.email)
+            }
+            else {
+                print("not signed in")
+                self.segueToSignupInVC(self)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,7 +101,8 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        timer.invalidate()
+        Auth.auth().removeStateDidChangeListener(handle!)
+        self.stopTracking()
     }
     
     func startLocationUpdates() {

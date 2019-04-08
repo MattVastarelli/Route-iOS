@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class PostViewController: UIViewController {
+    // firebase auth handler
+    var handle: AuthStateDidChangeListenerHandle?
     
     // empty route tracker to recive the tracked route from the tracking view
     var route: RouteTrack = RouteTrack()
     var id = ""
     var container = Array<Any>()
+    var userContainer = Array<Any>()
     
     @IBOutlet weak var routeTitle: UITextField!
     @IBOutlet weak var routeDescription: UITextView!
@@ -203,7 +207,7 @@ class PostViewController: UIViewController {
         // the main route class containing the non tracking data
         let r = Route(terain: ter, locationType: loc, trafficSpeed: speed, activityType: act, attributes: attr)
         
-        // get the user //hard codded for now
+        // get the user from the container //hard codded for now
         let u = User(fName: "matt", lName: "vastarelli")
         
         //make the route post obj
@@ -216,10 +220,8 @@ class PostViewController: UIViewController {
         self.id = rPost.getID()
         
         self.segueToPostViewVC(self)
-        /*DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8), execute: {
-            // Put your code which should be executed with a delay here
-         
-        })*/
+        // add the route to the user document
+        //u.addRoute(id: self.id)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -228,6 +230,29 @@ class PostViewController: UIViewController {
        
         let destinationVC = segue.destination as! MyPostViewController
         destinationVC.container = self.container
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if ((user) != nil) {
+                print(user?.email)
+                //get the user data
+                //let u = User(fName: , lName: )
+                //put it in the container
+            }
+            else {
+                print("not signed in")
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
 }

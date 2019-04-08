@@ -16,10 +16,17 @@ class SignUpInViewController: UIViewController {
     // sign up text feilds
     @IBOutlet weak var emailFeild: UITextField!
     @IBOutlet weak var passwordFeild: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
     
     //output label
+    @IBOutlet weak var failLabel: UILabel!
     @IBOutlet weak var outputLabel: UILabel!
-    @IBOutlet weak var failbox: UITextView!
+
+    
+    func segueToHomeVC (_ sender: Any) {
+        performSegue(withIdentifier: "signupToHome", sender: self)
+    }
     
     // grab the email and password from the feilds
     @IBAction func signUpButton(_ sender: UIButton) {
@@ -29,9 +36,16 @@ class SignUpInViewController: UIViewController {
         Auth.auth().createUser(withEmail: email!, password: password!, completion: {(user, error) in
             if error == nil {
                 self.outputLabel.text = "Success"
+                // create the user
+                var user = User(fName: self.firstName.text ?? "Anon", lName: self.lastName.text ?? "")
+                //save the user to firebase
+                user.save()
+                
+                // send the user back to the home screen
+                self.segueToHomeVC(self)
             }else{
                 self.outputLabel.text = "Failure"
-                self.failbox.text = error!.localizedDescription
+                self.failLabel.text = error!.localizedDescription
             }
             
         })

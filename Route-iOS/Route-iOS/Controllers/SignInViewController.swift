@@ -15,8 +15,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailFeild: UITextField!
     @IBOutlet weak var passwordFeild: UITextField!
     
+    @IBOutlet weak var failLabel: UILabel!
     @IBOutlet weak var successFail: UILabel!
-    @IBOutlet weak var failBox: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,10 @@ class SignInViewController: UIViewController {
     //email mattvastarelli@gmail.com
     //pass addminpass
     
+    func segueToHomeVC (_ sender: Any) {
+        performSegue(withIdentifier: "signinToHome", sender: self)
+    }
+    
     @IBAction func signInButton(_ sender: UIButton) {
         let email = emailFeild.text
         let password = passwordFeild.text
@@ -32,10 +36,11 @@ class SignInViewController: UIViewController {
         Auth.auth().signIn(withEmail: email!, password: password!, completion: {(user, error) in
             if error == nil{
                 self.successFail.text = "Success"
+                self.segueToHomeVC(self)
             }
             else{
                 self.successFail.text = "Failure"
-                self.failBox.text = error!.localizedDescription
+                self.failLabel.text = error!.localizedDescription
             }
         })
     }
