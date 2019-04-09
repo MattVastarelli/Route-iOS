@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    @IBAction func signOut(_ sender: Any) {
+    }
     
     func segueToSignupInVC (_ sender: Any) {
         performSegue(withIdentifier: "fromProfileToAuth", sender: self)
