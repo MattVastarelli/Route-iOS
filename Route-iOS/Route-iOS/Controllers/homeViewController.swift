@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "toSignin", sender: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    /*override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if ((user) != nil) {
@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(handle!)
-    }
+    }*/
     
 
 }
