@@ -977,7 +977,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j7-D4-YpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="845"/>
+            <point key="canvasLocation" x="1743" y="329"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VBe-aK-VHt">
@@ -1075,7 +1075,7 @@
                                                             <constraint firstItem="fQB-p4-9wk" firstAttribute="top" secondItem="L2d-OO-umb" secondAttribute="top" constant="21" id="KDE-xb-ia5"/>
                                                             <constraint firstItem="GWj-27-COv" firstAttribute="top" secondItem="fQB-p4-9wk" secondAttribute="bottom" constant="8" symbolic="YES" id="abZ-Sg-nv6"/>
                                                             <constraint firstItem="fQB-p4-9wk" firstAttribute="leading" secondItem="L2d-OO-umb" secondAttribute="leading" constant="53" id="hhc-Ni-dnl"/>
-                                                            <constraint firstItem="fQB-p4-9wk" firstAttribute="trailing" secondItem="GWj-27-COv" secondAttribute="trailing" id="hry-Lz-dil"/>
+                                                            <constraint firstItem="fQB-p4-9wk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GWj-27-COv" secondAttribute="trailing" id="hry-Lz-dil"/>
                                                             <constraint firstItem="GWj-27-COv" firstAttribute="leading" secondItem="L2d-OO-umb" secondAttribute="leading" constant="76" id="lei-Zb-sHC"/>
                                                         </constraints>
                                                     </view>
@@ -1123,8 +1123,8 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqA-LO-peQ">
-                                                                <rect key="frame" x="86" y="27" width="24" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqA-LO-peQ">
+                                                                <rect key="frame" x="86" y="27" width="25" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1168,7 +1168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd0-X0-Bnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336.8000000000002" y="844.22788605697156"/>
+            <point key="canvasLocation" x="2410" y="942"/>
         </scene>
         <!--Post Route-->
         <scene sceneID="2G4-3t-5lR">
@@ -1667,9 +1667,6 @@
                                         <state key="normal" title="Speak" image="mic">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="qHK-cu-8i9" kind="show" id="cqX-cn-ldH"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2257,8 +2254,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0BC-yt-uSw"/>
-        <segue reference="lUk-44-PJg"/>
-        <segue reference="pK5-uy-seL"/>
+        <segue reference="XDI-M5-fDm"/>
+        <segue reference="lzZ-Co-Hdp"/>
         <segue reference="Kg8-tT-7Ut"/>
     </inferredMetricsTieBreakers>
 </document>
