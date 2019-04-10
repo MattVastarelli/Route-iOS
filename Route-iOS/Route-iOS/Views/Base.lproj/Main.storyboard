@@ -257,6 +257,79 @@
             <point key="canvasLocation" x="556" y="818"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="KgK-4B-62u">
+            <objects>
+                <viewController id="TrB-o1-xrV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nwq-3g-cW1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="cDC-qe-7gl">
+                                <rect key="frame" x="16" y="114" width="343" height="470"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-P7-3lH">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emai:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEr-Of-HBy">
+                                        <rect key="frame" x="0.0" y="70.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEM-DQ-QnZ">
+                                        <rect key="frame" x="0.0" y="140.5" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr2-J7-m0J">
+                                        <rect key="frame" x="0.0" y="220.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8Q-fU-zjD">
+                                        <rect key="frame" x="0.0" y="290.5" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0T-gQ-qlP">
+                                        <rect key="frame" x="0.0" y="370.5" width="343" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWz-hu-lwl">
+                                        <rect key="frame" x="0.0" y="420" width="343" height="50"/>
+                                        <state key="normal" title="Sign In" image="signin">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInButton:" destination="ahz-OT-Few" eventType="touchUpInside" id="doD-lB-ky4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cDC-qe-7gl" firstAttribute="top" secondItem="WsK-5Q-WKw" secondAttribute="top" constant="94" id="7dR-BM-2Aa"/>
+                            <constraint firstItem="cDC-qe-7gl" firstAttribute="leading" secondItem="WsK-5Q-WKw" secondAttribute="leading" constant="16" id="8nQ-uz-S9s"/>
+                            <constraint firstItem="WsK-5Q-WKw" firstAttribute="trailing" secondItem="cDC-qe-7gl" secondAttribute="trailing" constant="16" id="Ysn-Dh-Ayi"/>
+                            <constraint firstItem="WsK-5Q-WKw" firstAttribute="bottom" secondItem="cDC-qe-7gl" secondAttribute="bottom" constant="83" id="mcW-2P-bc6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WsK-5Q-WKw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZ6-fT-LEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568.79999999999995" y="1482.9085457271365"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="W9t-jw-cXa">
             <objects>
                 <viewController id="lsa-cA-YKq" sceneMemberID="viewController">
@@ -2513,6 +2586,7 @@
         <image name="routeIcon" width="50" height="50"/>
         <image name="settings" width="50" height="50"/>
         <image name="share" width="50" height="50"/>
+        <image name="signin" width="50" height="50"/>
         <image name="signup" width="50" height="50"/>
         <image name="start" width="50" height="50"/>
         <image name="submit" width="50" height="50"/>
