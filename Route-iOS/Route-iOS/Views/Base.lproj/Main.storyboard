@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYe-1p-1rK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-809" y="818"/>
+            <point key="canvasLocation" x="-334" y="896"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="RsG-Ir-iHg">
@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVx-mk-gJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="818"/>
+            <point key="canvasLocation" x="412" y="816"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KgK-4B-62u">
@@ -327,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZ6-fT-LEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568.79999999999995" y="1482.9085457271365"/>
+            <point key="canvasLocation" x="-1385" y="45"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="W9t-jw-cXa">
@@ -431,7 +431,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIR-sI-mzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-809" y="1496"/>
+            <point key="canvasLocation" x="-1292" y="816"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AXu-0y-95K">
+            <objects>
+                <viewController id="CwX-ed-fGo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OCb-t8-Eww">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="USS-Yu-5g0">
+                                <rect key="frame" x="16" y="119" width="343" height="429"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must be loged in to use all the features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0L-VK-G9X">
+                                        <rect key="frame" x="7" y="0.0" width="329" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in or sign up " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpT-8u-jEI">
+                                        <rect key="frame" x="77" y="54.5" width="189.5" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx0-Bi-gwN">
+                                        <rect key="frame" x="131.5" y="109" width="80" height="54.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-kE-VaF">
+                                        <rect key="frame" x="114.5" y="163.5" width="114" height="132.5"/>
+                                        <state key="normal" title="Sign Up" image="signup">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="lsa-cA-YKq" kind="show" id="frU-Hd-88t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKs-4F-uJ7">
+                                        <rect key="frame" x="119" y="296" width="105" height="133"/>
+                                        <state key="normal" title="Sign In" image="signin">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="TrB-o1-xrV" kind="show" id="rYr-Pi-krA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qDG-XJ-1Pf" firstAttribute="trailing" secondItem="USS-Yu-5g0" secondAttribute="trailing" constant="16" id="6Lo-o5-w0Q"/>
+                            <constraint firstItem="USS-Yu-5g0" firstAttribute="top" secondItem="qDG-XJ-1Pf" secondAttribute="top" constant="99" id="O3E-eu-Vta"/>
+                            <constraint firstItem="qDG-XJ-1Pf" firstAttribute="bottom" secondItem="USS-Yu-5g0" secondAttribute="bottom" constant="119" id="Zph-dF-xlK"/>
+                            <constraint firstItem="USS-Yu-5g0" firstAttribute="leading" secondItem="qDG-XJ-1Pf" secondAttribute="leading" constant="16" id="tud-8K-BTN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qDG-XJ-1Pf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWy-aT-CBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671.20000000000005" y="44.527736131934034"/>
         </scene>
         <!--SignUpORSignIn-->
         <scene sceneID="StP-0S-5QF">
@@ -1844,6 +1908,9 @@
                                         <state key="normal" title="Speak" image="mic">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="CwX-ed-fGo" kind="show" id="epd-Lz-Dcg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2595,7 +2662,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0BC-yt-uSw"/>
-        <segue reference="tQE-k4-HRd"/>
+        <segue reference="Efh-B8-BPd"/>
         <segue reference="pK5-uy-seL"/>
         <segue reference="WqH-v6-b2y"/>
     </inferredMetricsTieBreakers>
