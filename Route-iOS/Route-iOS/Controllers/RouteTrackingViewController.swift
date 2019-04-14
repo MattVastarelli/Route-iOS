@@ -92,6 +92,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
             }
             else {
                 print("not signed in")
+                self.stopTracking()
                 self.segueToSignupInVC(self)
             }
         }

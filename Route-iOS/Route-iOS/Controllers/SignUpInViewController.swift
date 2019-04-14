@@ -35,6 +35,7 @@ class SignUpInViewController: UIViewController {
             if error == nil {
                 // create the user
                 var user = User(fName: self.firstName.text ?? "Anon", lName: self.lastName.text ?? "")
+                user.setEmail(email: self.emailFeild.text ?? "")//mypass123
                 //save the user to firebase
                 user.save()
                 

@@ -7,6 +7,7 @@ class User: NSObject {
     private var lastName: String
     private var email: String
     private var zipCode: Int
+    private var id: String
     // list of sting document ids for their routes
     private var myRoutes = Array<String>()
     // list of string document ids for their saved
@@ -19,11 +20,16 @@ class User: NSObject {
         self.lastName = lName
         self.email = "email"
         self.zipCode = -1
+        self.id = ""
     }
     //--------------------------------------------------------------------------------
     // Account Getters
     func getFirstName() -> String {
         return self.firstName
+    }
+    
+    func getID() -> String {
+        return self.id
     }
     
     func getLastName() -> String {
@@ -49,6 +55,10 @@ class User: NSObject {
     // Account Setters
     func setFirstName(name: String){
         self.firstName = name
+    }
+    
+    func setID(id: String){
+        self.id = id
     }
     
     func addRoute(id: String) {
@@ -99,7 +109,7 @@ class User: NSObject {
         var ref: DocumentReference? = nil
         
         // save the record
-        ref = db.collection("RoutePost").addDocument(data: [
+        ref = db.collection("Users").addDocument(data: [
             "first name": self.firstName,
             "last name": self.lastName,
             "email": self.email,
@@ -117,7 +127,24 @@ class User: NSObject {
     }
     
     // update the users document
-    func updateUser() {
+    func update() {
+        let db = Firestore.firestore()
+        let userRef = db.collection("Users").document(self.id)
         
+        userRef.updateData([
+            "first name": self.firstName,
+            "last name": self.lastName,
+            "email": self.email,
+            "zip code": self.zipCode,
+            "my routes": self.myRoutes,
+            "saved routes": self.mySavedRoutes
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+
     }
 }

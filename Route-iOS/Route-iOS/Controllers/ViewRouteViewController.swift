@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewRouteViewController: UIViewController {
 
+    // firebase auth handler
+    var handle: AuthStateDidChangeListenerHandle?
+    var isSignedIn = false
+    var userEmail = ""
+    var container = Array<Any>()
+    var userContainer = Array<User>()
+    
     @IBOutlet weak var attributeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
@@ -17,7 +25,7 @@ class ViewRouteViewController: UIViewController {
     @IBOutlet weak var terainLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    var container = Array<Any>()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +45,92 @@ class ViewRouteViewController: UIViewController {
         self.terainLabel.text = route.getRoute().getTerain()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveRoute(_ sender: Any) {
+        if isSignedIn {
+            let route = container[0] as! RoutePost
+            //self.getUser(Email: self.userEmail)
+            
+            let user = userContainer[0]
+            user.addSavedRoute(id: route.getID())
+            // save the update
+            user.update()
+            
+        }
+        else {
+            print("")
+        }
+        
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if ((user) != nil) {
+                let email = user?.email
+                
+                if !email!.isEmpty {
+                    self.userEmail = email as! String
+                    // get the user before the view appears
+                    self.getUser(Email: self.userEmail)
+                }
+                
+                self.isSignedIn = true
+            }
+            else {
+                self.isSignedIn = false
+                print("not signed in")
+            }
+        }
+    }
+    
+    func getUser(Email: String) {
+        var isUser = false
+        var user = User(fName: "", lName: "")
+        //  get data
+        let db = Firestore.firestore()
+        
+        let colRef = db.collection("Users")
+        _ = colRef.getDocuments()
+        {
+            (querySnapshot, err) in
+            
+            if let err = err
+            {
+                print("Error getting documents: \(err)");
+            }
+            else
+            {
+                //for all the documents
+                for document in querySnapshot!.documents {
+                    
+                    //get data
+                    let data = document.data() // main document data
+                    let email = data["email"] as! String
+                    let fName = data["first name"] as! String
+                    let lName = data["last name"] as! String
+                    
+                    let myRoutes = data["my routes"] as! Array<String>
+                    let savedRoutes = data["saved routes"] as! Array<String>
+                    
+                    
+                    if email == self.userEmail
+                    {
+                        isUser = true
+                        user = User(fName: fName, lName: lName)
+                        user.setMyRoutes(routes: myRoutes)
+                        user.setEmail(email: email)
+                        user.setMySavedRoutes(savedRoutes: savedRoutes)
+                        user.setID(id: document.documentID)
+                        // and it in to the container due to it being inside a async function
+                        self.userContainer.append(user)
+                    }
+                }
+            }
+        }
+    }
 }
