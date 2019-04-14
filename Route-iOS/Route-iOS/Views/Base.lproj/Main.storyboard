@@ -48,9 +48,6 @@
                                     <constraint firstAttribute="height" constant="30" id="PGT-uh-Jh2"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="signUpButton:" destination="vrg-gc-wjA" eventType="touchUpInside" id="KIb-0S-ka8"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-NH-Sho">
                                 <rect key="frame" x="16" y="232" width="338" height="21"/>
@@ -141,19 +138,10 @@
                         <viewLayoutGuide key="safeArea" id="aZG-JM-dFG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="rY5-dr-QDV"/>
-                    <connections>
-                        <outlet property="emailFeild" destination="vls-19-T9e" id="l2z-KB-I1F"/>
-                        <outlet property="failLabel" destination="QUx-uv-G1t" id="mR8-iX-GnF"/>
-                        <outlet property="firstName" destination="gj0-Ke-TZ6" id="5VU-ec-tsM"/>
-                        <outlet property="lastName" destination="08V-gj-ViF" id="MlU-3O-4cX"/>
-                        <outlet property="outputLabel" destination="hoT-NH-Sho" id="lbt-25-aw8"/>
-                        <outlet property="passwordFeild" destination="rEZ-it-RUg" id="2SY-2G-qyg"/>
-                        <segue destination="aV5-bQ-4aG" kind="showDetail" identifier="signupToHome" id="Efh-B8-BPd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYe-1p-1rK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="896"/>
+            <point key="canvasLocation" x="-3380" y="-818"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="RsG-Ir-iHg">
@@ -211,9 +199,6 @@
                                     <constraint firstAttribute="height" constant="30" id="I3k-u0-bLQ"/>
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
-                                <connections>
-                                    <action selector="signInButton:" destination="ahz-OT-Few" eventType="touchUpInside" id="yRZ-bw-Iqe"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -244,22 +229,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K1H-uN-yvz"/>
                     </view>
-                    <connections>
-                        <outlet property="emailFeild" destination="lQd-mR-Yr4" id="FqN-Ip-Oau"/>
-                        <outlet property="failLabel" destination="HJY-Bg-i8Z" id="Gim-1M-N3m"/>
-                        <outlet property="passwordFeild" destination="MuK-id-aLZ" id="oJy-lf-T1p"/>
-                        <outlet property="successFail" destination="OtQ-9W-SKM" id="wTb-yH-tb3"/>
-                        <segue destination="aV5-bQ-4aG" kind="showDetail" identifier="signinToHome" id="tQE-k4-HRd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVx-mk-gJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="816"/>
+            <point key="canvasLocation" x="-2674" y="-762"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="KgK-4B-62u">
             <objects>
-                <viewController id="TrB-o1-xrV" sceneMemberID="viewController">
+                <viewController id="TrB-o1-xrV" customClass="SignInViewController" customModule="Route_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nwq-3g-cW1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,7 +273,7 @@
                                         <rect key="frame" x="0.0" y="290.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0T-gQ-qlP">
                                         <rect key="frame" x="0.0" y="370.5" width="343" height="0.0"/>
@@ -309,7 +287,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signInButton:" destination="ahz-OT-Few" eventType="touchUpInside" id="doD-lB-ky4"/>
+                                            <action selector="signInButton:" destination="TrB-o1-xrV" eventType="touchUpInside" id="jNA-EM-UYJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -324,15 +302,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WsK-5Q-WKw"/>
                     </view>
+                    <connections>
+                        <outlet property="emailFeild" destination="zEM-DQ-QnZ" id="rDm-aq-EYN"/>
+                        <outlet property="failLabel" destination="k0T-gQ-qlP" id="1LQ-2b-5Yg"/>
+                        <outlet property="passwordFeild" destination="d8Q-fU-zjD" id="11g-Ou-Q42"/>
+                        <segue destination="aV5-bQ-4aG" kind="showDetail" identifier="signinToHome" id="QKT-u1-Out"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZ6-fT-LEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1385" y="45"/>
+            <point key="canvasLocation" x="1561" y="704"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up In View Controller-->
         <scene sceneID="W9t-jw-cXa">
             <objects>
-                <viewController id="lsa-cA-YKq" sceneMemberID="viewController">
+                <viewController id="lsa-cA-YKq" customClass="SignUpInViewController" customModule="Route_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="42w-2n-bCC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,7 +359,7 @@
                                         <rect key="frame" x="0.0" y="159.5" width="339" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1d9-1B-3p0">
                                         <rect key="frame" x="0.0" y="213.5" width="339" height="20.5"/>
@@ -413,7 +397,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUpButton:" destination="vrg-gc-wjA" eventType="touchUpInside" id="Wkq-zQ-QMi"/>
+                                            <action selector="signUpButton:" destination="lsa-cA-YKq" eventType="touchUpInside" id="a8t-Ud-p7d"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -428,10 +412,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zpl-ra-S1u"/>
                     </view>
+                    <connections>
+                        <outlet property="emailFeild" destination="VZe-mg-XJT" id="Xaa-gi-elf"/>
+                        <outlet property="failLabel" destination="3IQ-nh-6g1" id="USQ-iR-sYt"/>
+                        <outlet property="firstName" destination="Kll-UV-lpD" id="asz-RD-52V"/>
+                        <outlet property="lastName" destination="UiH-k5-Z4U" id="ufj-RV-LIY"/>
+                        <outlet property="passwordFeild" destination="oRS-ZX-FTf" id="RJA-pX-EcC"/>
+                        <segue destination="aV5-bQ-4aG" kind="showDetail" identifier="signupToHome" id="ZMC-wK-rBN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIR-sI-mzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1292" y="816"/>
+            <point key="canvasLocation" x="2607" y="739"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AXu-0y-95K">
@@ -445,25 +437,25 @@
                                 <rect key="frame" x="16" y="119" width="343" height="429"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must be loged in to use all the features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0L-VK-G9X">
-                                        <rect key="frame" x="7" y="0.0" width="329" height="54.5"/>
+                                        <rect key="frame" x="7" y="0.0" width="329" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in or sign up " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpT-8u-jEI">
-                                        <rect key="frame" x="77" y="54.5" width="189.5" height="54.5"/>
+                                        <rect key="frame" x="77" y="41.5" width="189.5" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx0-Bi-gwN">
-                                        <rect key="frame" x="131.5" y="109" width="80" height="54.5"/>
+                                        <rect key="frame" x="131.5" y="83" width="80" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-kE-VaF">
-                                        <rect key="frame" x="114.5" y="163.5" width="114" height="132.5"/>
+                                        <rect key="frame" x="114.5" y="124.5" width="114" height="101.5"/>
                                         <state key="normal" title="Sign Up" image="signup">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -472,12 +464,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKs-4F-uJ7">
-                                        <rect key="frame" x="119" y="296" width="105" height="133"/>
+                                        <rect key="frame" x="119" y="226" width="105" height="101.5"/>
                                         <state key="normal" title="Sign In" image="signin">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="TrB-o1-xrV" kind="show" id="rYr-Pi-krA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq5-8Z-ia5">
+                                        <rect key="frame" x="122" y="327.5" width="99" height="101.5"/>
+                                        <state key="normal" title="Home" image="home">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="aV5-bQ-4aG" kind="show" id="qPq-TJ-nVL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -495,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWy-aT-CBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671.20000000000005" y="44.527736131934034"/>
+            <point key="canvasLocation" x="2250" y="-47"/>
         </scene>
         <!--SignUpORSignIn-->
         <scene sceneID="StP-0S-5QF">
@@ -509,17 +510,11 @@
                                 <rect key="frame" x="93" y="311" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <segue destination="vrg-gc-wjA" kind="show" id="gt5-eD-uXg"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kV7-C4-uap">
                                 <rect key="frame" x="235" y="311" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
-                                <connections>
-                                    <segue destination="ahz-OT-Few" kind="show" id="wHr-9C-qX9"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You must be loged in to use all the features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCK-ty-Tb2">
                                 <rect key="frame" x="23" y="174" width="329" height="21"/>
@@ -550,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eow-s1-MH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="46"/>
+            <point key="canvasLocation" x="-1822" y="-744"/>
         </scene>
         <!--Route Table View Controller-->
         <scene sceneID="aBl-Pg-nSR">
@@ -624,7 +619,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6De-xv-BLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2045.5999999999999" y="-1808.5457271364319"/>
+            <point key="canvasLocation" x="5782" y="-27"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DVm-Cq-OXv">
@@ -799,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vv8-Vi-fsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2846" y="-2534"/>
+            <point key="canvasLocation" x="-1823" y="-1469"/>
         </scene>
         <!--View Route View Controller-->
         <scene sceneID="WCO-Ih-pwE">
@@ -969,7 +964,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dA-V6-Mox" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2846" y="-1809"/>
+            <point key="canvasLocation" x="5782" y="771"/>
         </scene>
         <!--UserProfile-->
         <scene sceneID="yUd-SL-WYf">
@@ -984,7 +979,7 @@
                                 <items>
                                     <barButtonItem title="logout" image="logout" id="EPN-s6-ere">
                                         <connections>
-                                            <action selector="signOut:" destination="byp-gs-oTI" id="KNS-3H-fpl"/>
+                                            <action selector="signOut:" destination="byp-gs-oTI" id="gfX-R4-cNu"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Jje-1D-hsh"/>
@@ -1039,12 +1034,13 @@
                         <viewLayoutGuide key="safeArea" id="ykl-SL-4Lf"/>
                     </view>
                     <connections>
-                        <segue destination="WT6-8Z-AMS" kind="showDetail" identifier="fromProfileToAuth" id="7BR-Cq-W5g"/>
+                        <segue destination="CwX-ed-fGo" kind="show" identifier="fromProfileToAuth" id="9zg-wO-lVm"/>
+                        <segue destination="aV5-bQ-4aG" kind="show" identifier="fromProfileToHome" id="hPf-2n-u76"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEn-x1-C2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="-919.79010494752629"/>
+            <point key="canvasLocation" x="4730" y="-27"/>
         </scene>
         <!--GPS Tracking-->
         <scene sceneID="Fax-OJ-xqM">
@@ -1055,29 +1051,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcj-2Q-FIG">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Start" image="start" id="yiB-Ie-hjJ">
-                                        <connections>
-                                            <action selector="startTracking:" destination="b4h-8k-yjS" id="tJC-Uc-CtL"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Start" image="start" id="yiB-Ie-hjJ"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2yf-jO-Uhu"/>
-                                    <barButtonItem title="Post" image="post" id="4PQ-kT-8sg">
-                                        <connections>
-                                            <segue destination="hgh-i6-DH2" kind="show" id="iwO-oJ-Pbh"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Post" image="post" id="4PQ-kT-8sg"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KUq-EC-LW3"/>
-                                    <barButtonItem title="Stop" image="close" id="YRu-l5-ybi">
-                                        <connections>
-                                            <action selector="stopTracking:" destination="b4h-8k-yjS" id="Jzq-sI-do1"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Stop" image="close" id="YRu-l5-ybi"/>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pr-st-xIp">
-                                <rect key="frame" x="188" y="535" width="187" height="82"/>
+                                <rect key="frame" x="188" y="541" width="187" height="82"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikg-1r-IMf">
                                         <rect key="frame" x="81" y="53" width="34" height="21"/>
@@ -1101,7 +1085,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXk-bu-lqs">
-                                <rect key="frame" x="0.0" y="535" width="190" height="82"/>
+                                <rect key="frame" x="0.0" y="541" width="190" height="82"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOb-9b-TJZ">
                                         <rect key="frame" x="76" y="53" width="38" height="21"/>
@@ -1126,7 +1110,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-0F-ysV">
-                                <rect key="frame" x="188" y="453" width="187" height="86"/>
+                                <rect key="frame" x="188" y="459" width="187" height="86"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gC-ac-Xkz">
                                         <rect key="frame" x="65" y="50" width="67" height="21"/>
@@ -1151,10 +1135,10 @@
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ui3-wv-9EG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lju-Bg-dO5">
-                                <rect key="frame" x="0.0" y="453" width="190" height="86"/>
+                                <rect key="frame" x="0.0" y="459" width="190" height="86"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlq-ZH-03h">
                                         <rect key="frame" x="76" y="50" width="38" height="21"/>
@@ -1206,24 +1190,15 @@
                         <viewLayoutGuide key="safeArea" id="J9d-QD-rgo"/>
                     </view>
                     <navigationItem key="navigationItem" id="ai1-q5-0d8"/>
-                    <connections>
-                        <outlet property="distanceLabel" destination="GJ7-OT-Ej6" id="8m4-2B-hN0"/>
-                        <outlet property="mapView" destination="Ui3-wv-9EG" id="s7W-QV-La6"/>
-                        <outlet property="paceLabel" destination="OSA-8C-JdV" id="E2R-Md-5tV"/>
-                        <outlet property="splitLabel" destination="ZSd-Nc-L7u" id="mPj-MX-Skg"/>
-                        <outlet property="timeLabel" destination="ukL-xv-8JV" id="7NR-YJ-cAy"/>
-                        <segue destination="aV5-bQ-4aG" kind="show" identifier="fromGPSToHome" id="XWm-DR-0Py"/>
-                        <segue destination="WT6-8Z-AMS" kind="showDetail" identifier="fromGPStoAuth" id="Kg8-tT-7Ut"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j7-D4-YpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1743" y="329"/>
+            <point key="canvasLocation" x="-1798" y="-27"/>
         </scene>
-        <!--View Controller-->
+        <!--Route Tracking View Controller-->
         <scene sceneID="VBe-aK-VHt">
             <objects>
-                <viewController id="qHK-cu-8i9" sceneMemberID="viewController">
+                <viewController id="qHK-cu-8i9" customClass="RouteTrackingViewController" customModule="Route_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsv-db-NbR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1236,15 +1211,19 @@
                                 <items>
                                     <barButtonItem title="Start" image="start" id="doZ-gg-S1W">
                                         <connections>
-                                            <action selector="startTracking:" destination="b4h-8k-yjS" id="Ndf-Iy-F9V"/>
+                                            <action selector="startTracking:" destination="qHK-cu-8i9" id="WiX-5y-Hp4"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="CzT-ML-EcW"/>
-                                    <barButtonItem title="Post" image="post" id="ViB-YH-ITf"/>
+                                    <barButtonItem title="Post" image="post" id="ViB-YH-ITf">
+                                        <connections>
+                                            <segue destination="hgh-i6-DH2" kind="show" id="GGt-qo-pqX"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YOR-3r-WSr"/>
                                     <barButtonItem title="Stop" image="close" id="Eda-9n-GeI">
                                         <connections>
-                                            <action selector="stopTracking:" destination="b4h-8k-yjS" id="H5M-Mn-JfM"/>
+                                            <action selector="stopTracking:" destination="qHK-cu-8i9" id="vxa-c9-4Xd"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -1406,10 +1385,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="STV-Tn-Hgw"/>
                     </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="PqA-LO-peQ" id="4RQ-dL-6JD"/>
+                        <outlet property="mapView" destination="U62-RW-6jI" id="dKV-Zc-SyD"/>
+                        <outlet property="paceLabel" destination="DoN-yT-bJR" id="jr8-8B-XjM"/>
+                        <outlet property="splitLabel" destination="cnu-gy-Sah" id="cx4-D8-Cm2"/>
+                        <outlet property="timeLabel" destination="fQB-p4-9wk" id="ie7-i3-nhK"/>
+                        <segue destination="CwX-ed-fGo" kind="show" identifier="fromGPStoAuth" id="iNB-fA-a4Y"/>
+                        <segue destination="aV5-bQ-4aG" kind="show" identifier="fromGPSToHome" id="Gb0-Fr-mWH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd0-X0-Bnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="1035"/>
+            <point key="canvasLocation" x="3567" y="-18"/>
         </scene>
         <!--Post Route-->
         <scene sceneID="2G4-3t-5lR">
@@ -1424,7 +1412,7 @@
                                 <items>
                                     <barButtonItem title="Cancel" image="close" id="Xd3-Vj-SwF">
                                         <connections>
-                                            <segue destination="aV5-bQ-4aG" kind="show" id="lUk-44-PJg"/>
+                                            <segue destination="aV5-bQ-4aG" kind="presentation" id="lUk-44-PJg"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mr3-3B-4nR"/>
@@ -1825,12 +1813,12 @@
                         <outlet property="trail" destination="ogu-fu-CgM" id="q1n-9D-BJ3"/>
                         <outlet property="urban" destination="TKc-7X-lnq" id="WD5-WR-BU6"/>
                         <outlet property="walk" destination="ZWG-mf-Dmj" id="zSr-6S-tfu"/>
-                        <segue destination="Bky-b9-1yt" kind="show" identifier="fromPostToViewPost" id="0BC-yt-uSw"/>
+                        <segue destination="mo2-M2-lK1" kind="show" identifier="fromPostToViewPost" id="rWE-I5-QY6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm6-iN-apC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2829.5999999999999" y="202.84857571214394"/>
+            <point key="canvasLocation" x="3546" y="739"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FTM-Bd-dcF">
@@ -1848,7 +1836,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZA-hE-dem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201" y="-943"/>
+            <point key="canvasLocation" x="3801" y="-1721"/>
         </scene>
         <!--Route iOs-->
         <scene sceneID="Ycr-Zz-7Pq">
@@ -1863,7 +1851,7 @@
                                 <items>
                                     <barButtonItem image="GPS" id="CEu-XW-Gu1">
                                         <connections>
-                                            <segue destination="b4h-8k-yjS" kind="showDetail" id="xzM-wf-JcW"/>
+                                            <segue destination="qHK-cu-8i9" kind="show" id="bvu-5z-87a"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Fhw-Oy-cBD"/>
@@ -1908,9 +1896,6 @@
                                         <state key="normal" title="Speak" image="mic">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="G6q-Rt-qzr" kind="showDetail" id="b3k-tO-9uC"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1928,13 +1913,10 @@
                         <viewLayoutGuide key="safeArea" id="otK-gJ-Lc7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Route iOs" id="u7o-TF-8pe"/>
-                    <connections>
-                        <segue destination="WT6-8Z-AMS" kind="show" identifier="toSignin" id="WqH-v6-b2y"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEx-ba-chS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1469.5999999999999" y="-920.68965517241384"/>
+            <point key="canvasLocation" x="3802" y="-913"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FGl-wd-R1y">
@@ -2320,12 +2302,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghf-vg-Q6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845.5999999999999" y="967.4662668665668"/>
+            <point key="canvasLocation" x="-2540" y="689"/>
         </scene>
-        <!--View Controller-->
+        <!--My Post View Controller-->
         <scene sceneID="qqN-po-FTb">
             <objects>
-                <viewController id="mo2-M2-lK1" sceneMemberID="viewController">
+                <viewController id="mo2-M2-lK1" customClass="MyPostViewController" customModule="Route_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XE1-Qd-r47">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2460,9 +2442,17 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mx-qb-tqX">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <items>
-                                    <barButtonItem title="Item" image="home" id="DP7-dU-Co8"/>
+                                    <barButtonItem title="Item" image="home" id="DP7-dU-Co8">
+                                        <connections>
+                                            <segue destination="aV5-bQ-4aG" kind="show" id="IMO-cO-VaP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="d49-TJ-eOB"/>
-                                    <barButtonItem image="profile" id="8qp-AO-ySY"/>
+                                    <barButtonItem image="profile" id="8qp-AO-ySY">
+                                        <connections>
+                                            <segue destination="byp-gs-oTI" kind="showDetail" id="4Aw-aE-VRv"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -2478,10 +2468,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XVP-w1-yfn"/>
                     </view>
+                    <connections>
+                        <outlet property="attributeLabel" destination="dau-0m-RZh" id="NHq-8X-u4K"/>
+                        <outlet property="descriptionLabel" destination="ZtX-3H-bqO" id="cP9-ri-KbL"/>
+                        <outlet property="locationLabel" destination="Lss-0s-uBC" id="9mR-Ii-KYU"/>
+                        <outlet property="speedLabel" destination="Pfw-oj-2Cf" id="11m-nH-opo"/>
+                        <outlet property="terainLabel" destination="RVA-5C-45N" id="gau-33-Cll"/>
+                        <outlet property="titleLabel" destination="8yy-97-cf0" id="lpT-Md-gAl"/>
+                        <outlet property="typeLabel" destination="uKZ-Az-WMF" id="dDN-2f-c82"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huq-Xg-o9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3737" y="896"/>
+            <point key="canvasLocation" x="3566" y="1473"/>
         </scene>
         <!--Submitted Post -->
         <scene sceneID="Fei-Un-eFG">
@@ -2494,18 +2493,10 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V67-pH-3oM">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Home" id="Wny-2J-Vk5">
-                                        <connections>
-                                            <segue destination="aV5-bQ-4aG" kind="show" id="XDI-M5-fDm"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Home" id="Wny-2J-Vk5"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4Hl-mj-thg"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Hmb-sg-0a6"/>
-                                    <barButtonItem title="My Profile" id="KIV-Wg-lLd">
-                                        <connections>
-                                            <segue destination="byp-gs-oTI" kind="show" id="lzZ-Co-Hdp"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="My Profile" id="KIV-Wg-lLd"/>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAK-Dc-qdN">
@@ -2615,19 +2606,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tq3-sn-BdL"/>
                     </view>
-                    <connections>
-                        <outlet property="attributeLabel" destination="SX3-RQ-Sr1" id="nlf-H7-oos"/>
-                        <outlet property="descriptionLabel" destination="2Mi-JD-FWo" id="ULZ-xX-ygI"/>
-                        <outlet property="locationLabel" destination="eWa-gy-ltz" id="N5z-wG-TQS"/>
-                        <outlet property="speedLabel" destination="PxS-1L-eJu" id="T11-ZM-k9h"/>
-                        <outlet property="terainLabel" destination="JFu-ik-Ckb" id="pHN-ha-ZbB"/>
-                        <outlet property="titleLabel" destination="Lpw-3u-C31" id="mPS-26-hfc"/>
-                        <outlet property="typeLabel" destination="sKg-8Y-N2G" id="pdN-OH-mOB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGR-t1-Q2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3736.8000000000002" y="202.84857571214394"/>
+            <point key="canvasLocation" x="-2540" y="-27"/>
         </scene>
         <!--Edit Post View Controller-->
         <scene sceneID="yuL-QW-j95">
@@ -2640,19 +2622,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKf-GT-maa">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Cancel" id="67P-2s-Eh4">
-                                        <connections>
-                                            <segue destination="Bky-b9-1yt" kind="show" id="nuj-g2-MC1"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Cancel" id="67P-2s-Eh4"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5D4-zV-GO4"/>
                                     <barButtonItem title="Delete" id="ehl-Gb-e3Y"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lgw-1k-eU4"/>
-                                    <barButtonItem title="Save" id="1rM-AK-dN6">
-                                        <connections>
-                                            <segue destination="Bky-b9-1yt" kind="show" id="aVh-ue-sE8"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Save" id="1rM-AK-dN6"/>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKy-kZ-2vc">
@@ -3023,7 +2997,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fh2-Pi-jIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4636" y="202.84857571214394"/>
+            <point key="canvasLocation" x="6716" y="-969"/>
         </scene>
     </scenes>
     <resources>
@@ -3047,9 +3021,8 @@
         <image name="web" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0BC-yt-uSw"/>
-        <segue reference="lUk-44-PJg"/>
-        <segue reference="pK5-uy-seL"/>
-        <segue reference="WqH-v6-b2y"/>
+        <segue reference="qPq-TJ-nVL"/>
+        <segue reference="4Aw-aE-VRv"/>
+        <segue reference="9zg-wO-lVm"/>
     </inferredMetricsTieBreakers>
 </document>

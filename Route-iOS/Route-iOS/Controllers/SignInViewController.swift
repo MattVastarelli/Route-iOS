@@ -16,14 +16,12 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordFeild: UITextField!
     
     @IBOutlet weak var failLabel: UILabel!
-    @IBOutlet weak var successFail: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    //email mattvastarelli@gmail.com
-    //pass addminpass
+    
     
     func segueToHomeVC (_ sender: Any) {
         performSegue(withIdentifier: "signinToHome", sender: self)
@@ -35,11 +33,9 @@ class SignInViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email!, password: password!, completion: {(user, error) in
             if error == nil{
-                self.successFail.text = "Success"
                 self.segueToHomeVC(self)
             }
             else{
-                self.successFail.text = "Failure"
                 self.failLabel.text = error!.localizedDescription
             }
         })

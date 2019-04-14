@@ -19,10 +19,21 @@ class ProfileViewController: UIViewController {
 
     }
     @IBAction func signOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        self.segueToHomeVC(self)
     }
     
     func segueToSignupInVC (_ sender: Any) {
         performSegue(withIdentifier: "fromProfileToAuth", sender: self)
+    }
+    
+    func segueToHomeVC (_ sender: Any) {
+        performSegue(withIdentifier: "fromProfileToHome", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,5 +53,6 @@ class ProfileViewController: UIViewController {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(handle!)
     }
-
+    
+    
 }

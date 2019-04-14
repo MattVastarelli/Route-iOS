@@ -21,9 +21,7 @@ class SignUpInViewController: UIViewController {
     
     //output label
     @IBOutlet weak var failLabel: UILabel!
-    @IBOutlet weak var outputLabel: UILabel!
 
-    
     func segueToHomeVC (_ sender: Any) {
         performSegue(withIdentifier: "signupToHome", sender: self)
     }
@@ -35,7 +33,6 @@ class SignUpInViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email!, password: password!, completion: {(user, error) in
             if error == nil {
-                self.outputLabel.text = "Success"
                 // create the user
                 var user = User(fName: self.firstName.text ?? "Anon", lName: self.lastName.text ?? "")
                 //save the user to firebase
@@ -44,7 +41,6 @@ class SignUpInViewController: UIViewController {
                 // send the user back to the home screen
                 self.segueToHomeVC(self)
             }else{
-                self.outputLabel.text = "Failure"
                 self.failLabel.text = error!.localizedDescription
             }
             

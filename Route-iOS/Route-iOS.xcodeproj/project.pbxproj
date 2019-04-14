@@ -23,6 +23,7 @@
 		349C8A1C2230B0B9005AB6B8 /* RouteTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1B2230B0B9005AB6B8 /* RouteTrack.swift */; };
 		349C8A1E2230B15B005AB6B8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C8A1D2230B15B005AB6B8 /* Location.swift */; };
 		34A66FEA2235A84600C4FBCE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A66FE92235A84600C4FBCE /* MapKit.framework */; };
+		34AD657E2263CDD100F76F88 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD657D2263CDD100F76F88 /* AuthViewController.swift */; };
 		34F8B512224C52DD00853F8D /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8B511224C52DD00853F8D /* RouteTableViewController.swift */; };
 		34F8FA93225AB1570038991C /* ViewRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8FA92225AB1570038991C /* ViewRouteViewController.swift */; };
 		558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */; };
@@ -58,6 +59,7 @@
 		349C8A1B2230B0B9005AB6B8 /* RouteTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrack.swift; sourceTree = "<group>"; };
 		349C8A1D2230B15B005AB6B8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		34A66FE92235A84600C4FBCE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		34AD657D2263CDD100F76F88 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		34F8B511224C52DD00853F8D /* RouteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		34F8FA92225AB1570038991C /* ViewRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouteViewController.swift; sourceTree = "<group>"; };
 		4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.release.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				34F8B511224C52DD00853F8D /* RouteTableViewController.swift */,
 				3409B0AC22582AE400699CB7 /* HomeViewController.swift */,
 				34F8FA92225AB1570038991C /* ViewRouteViewController.swift */,
+				34AD657D2263CDD100F76F88 /* AuthViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				34937D272238945D0026CEE9 /* SignInViewController.swift in Sources */,
 				34937D232238945D0026CEE9 /* RouteTrackingViewController.swift in Sources */,
 				34937D252238945D0026CEE9 /* SignUpInViewController.swift in Sources */,
+				34AD657E2263CDD100F76F88 /* AuthViewController.swift in Sources */,
 				34F8FA93225AB1570038991C /* ViewRouteViewController.swift in Sources */,
 				A0A0B65A2211C58400810FDF /* Route.swift in Sources */,
 				34937D262238945D0026CEE9 /* CameraViewController.swift in Sources */,

@@ -54,6 +54,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated:true);
         //locationManager = CLLocationManager()
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
