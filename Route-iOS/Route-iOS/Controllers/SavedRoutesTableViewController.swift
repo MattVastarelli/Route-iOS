@@ -15,6 +15,7 @@ class SavedRoutesTableViewController: UITableViewController {
     var routes = Array<RoutePost>()
     var isMyRoutes = false
     let db = Firestore.firestore()
+    var container = Array<Any>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,23 +91,60 @@ class SavedRoutesTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.routes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
+        // given routePost
+        let routePost: RoutePost
+        
+        //geven row
+        routePost = self.routes[indexPath.row]
+        
+        //fill the cell
+        /*
+        cell.routeTitle?.text = routePost.getTitle()
+        cell.routeDate.text = routePost.getTrackedRoute().getDateAsString()
+        cell.routeDistance.text = routePost.getTrackedRoute().getDistanceAsString()
+        cell.routeType.text = routePost.getRoute().getActivityType()
+        
+        cell.viewBtn.tag = indexPath.row
+        cell.viewBtn.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
+        */
+        
         return cell
     }
-    */
+    
+    @objc func connected(sender: UIButton){
+        let route = self.routes[sender.tag]
+        self.container.append(route)
+        
+        self.segueToPostViewVC(self)
+    }
+    
+    func segueToPostViewVC (_ sender: Any) {
+        performSegue(withIdentifier: "fromSavedToView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as! ViewRouteViewController
+        destinationVC.container = self.container
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 132
+    }
 
     /*
     // Override to support conditional editing of the table view.
