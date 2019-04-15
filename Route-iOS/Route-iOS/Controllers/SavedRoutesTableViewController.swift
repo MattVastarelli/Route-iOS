@@ -7,25 +7,87 @@
 //
 
 import UIKit
+import Firebase
 
 class SavedRoutesTableViewController: UITableViewController {
 
     var savedRoutes = Array<String>()
+    var routes = Array<RoutePost>()
     var isMyRoutes = false
-    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.savedRoutes)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        for route in self.savedRoutes {
+            self.getRoute(routeID: route)
+        }
+        self.tableView.reloadData()
+        print(self.routes)
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
+    func getRoute(routeID: String) {
+        let routeRef = db.collection("RoutePost").document(routeID)
+        
+        routeRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                //get data
+                let data = document.data() // main document data
+                // create the instance of required objs
+                
+                //route track
+                //route track collection
+                let rtCollection = data?["tracked route"] as! Dictionary<String, AnyObject>
+                let rt = RouteTrack()
+                rt.distance = rtCollection["distance"] as! Float
+                rt.duration = rtCollection["duration"] as! Int
+                let firTimeStamp = rtCollection["Date"] as! Timestamp
+                rt.date = firTimeStamp.dateValue() as NSDate
+                
+                
+                let locs = rtCollection["locations"] as! [NSDictionary]
+                rt.setLocations(locations: locs)
+                
+                //route
+                let routeDetCollection = data?["route description"] as! Dictionary<String, AnyObject>
+                let actType = routeDetCollection["activity type"] as! String
+                let loc = routeDetCollection["location"] as! String
+                let terain = routeDetCollection["terain"] as! String
+                let tSpeed = routeDetCollection["traffic speed"] as! String
+                let attr = routeDetCollection["attributes"] as! [String]
+                // route instance
+                let r = Route(terain: terain, locationType: loc, trafficSpeed: tSpeed, activityType: actType, attributes: attr )
+                
+                
+                //author
+                let authColection = data?["author"] as! Dictionary<String, AnyObject>
+                let first = authColection["first name"] as! String
+                let last = authColection["last name"] as! String
+                //author isntance
+                let auth = User(fName: first, lName: last)
+                
+                //route post
+                // root level route post items
+                let title = data?["title"] as! String
+                let body = data?["body"] as! String
+                
+                let rp = RoutePost(author: auth, title: title, body: body, route: r, track: rt)
+                rp.setID(id: document.documentID)
+                
+                // add it to the list
+                self.routes.append(rp)
+                print(self.routes)
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
