@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController {
 
     // firebase auth handler
     var handle: AuthStateDidChangeListenerHandle?
+    var userEmail = ""
+    var user = User(fName: "", lName: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,11 @@ class ProfileViewController: UIViewController {
         }
         self.segueToHomeVC(self)
     }
+    @IBAction func viewMyRoutes(_ sender: Any) {
+    }
+    @IBAction func mySavedRoutes(_ sender: Any) {
+        print(user.getMySavedRoutes())
+    }
     
     func segueToSignupInVC (_ sender: Any) {
         performSegue(withIdentifier: "fromProfileToAuth", sender: self)
@@ -36,11 +43,54 @@ class ProfileViewController: UIViewController {
         performSegue(withIdentifier: "fromProfileToHome", sender: self)
     }
     
+    func getUser() {
+        //  get data
+        let db = Firestore.firestore()
+        
+        let colRef = db.collection("Users")
+        _ = colRef.getDocuments()
+            {
+                (querySnapshot, err) in
+                
+                if let err = err
+                {
+                    print("Error getting documents: \(err)");
+                }
+                else
+                {
+                    //for all the documents
+                    for document in querySnapshot!.documents {
+                        
+                        //get data
+                        let data = document.data() // main document data
+                        let email = data["email"] as! String
+                        let fName = data["first name"] as! String
+                        let lName = data["last name"] as! String
+                        
+                        let myRoutes = data["my routes"] as! Array<String>
+                        let savedRoutes = data["saved routes"] as! Array<String>
+                        
+                        
+                        if email == self.userEmail
+                        {
+                            self.user.setFirstName(name: fName)
+                            self.user.setLastName(name: lName)
+                            self.user.setMyRoutes(routes: myRoutes)
+                            self.user.setEmail(email: email)
+                            self.user.setMySavedRoutes(savedRoutes: savedRoutes)
+                            self.user.setID(id: document.documentID)
+                        }
+                    }
+                }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if ((user) != nil) {
-                print(user?.email)
+                self.userEmail = user?.email ?? ""
+                self.getUser()
             }
             else {
                 print("not signed in")

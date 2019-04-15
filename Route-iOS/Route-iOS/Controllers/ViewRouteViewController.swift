@@ -16,7 +16,7 @@ class ViewRouteViewController: UIViewController {
     var isSignedIn = false
     var userEmail = ""
     var container = Array<Any>()
-    var userContainer = Array<User>()
+    var user = User(fName: "", lName: "")
     
     @IBOutlet weak var attributeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -49,11 +49,10 @@ class ViewRouteViewController: UIViewController {
         if isSignedIn {
             let route = container[0] as! RoutePost
             //self.getUser(Email: self.userEmail)
-            
-            let user = userContainer[0]
-            user.addSavedRoute(id: route.getID())
+
+            self.user.addSavedRoute(id: route.getID())
             // save the update
-            user.update()
+            self.user.update()
             
         }
         else {
@@ -76,7 +75,7 @@ class ViewRouteViewController: UIViewController {
                 if !email!.isEmpty {
                     self.userEmail = email as! String
                     // get the user before the view appears
-                    self.getUser(Email: self.userEmail)
+                    self.getUser()
                 }
                 
                 self.isSignedIn = true
@@ -88,9 +87,7 @@ class ViewRouteViewController: UIViewController {
         }
     }
     
-    func getUser(Email: String) {
-        var isUser = false
-        var user = User(fName: "", lName: "")
+    func getUser() {
         //  get data
         let db = Firestore.firestore()
         
@@ -120,14 +117,12 @@ class ViewRouteViewController: UIViewController {
                     
                     if email == self.userEmail
                     {
-                        isUser = true
-                        user = User(fName: fName, lName: lName)
-                        user.setMyRoutes(routes: myRoutes)
-                        user.setEmail(email: email)
-                        user.setMySavedRoutes(savedRoutes: savedRoutes)
-                        user.setID(id: document.documentID)
-                        // and it in to the container due to it being inside a async function
-                        self.userContainer.append(user)
+                        self.user.setFirstName(name: fName)
+                        self.user.setLastName(name: lName)
+                        self.user.setMyRoutes(routes: myRoutes)
+                        self.user.setEmail(email: email)
+                        self.user.setMySavedRoutes(savedRoutes: savedRoutes)
+                        self.user.setID(id: document.documentID)
                     }
                 }
             }
