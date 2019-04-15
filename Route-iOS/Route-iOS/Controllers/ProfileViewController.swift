@@ -30,9 +30,11 @@ class ProfileViewController: UIViewController {
         self.segueToHomeVC(self)
     }
     @IBAction func viewMyRoutes(_ sender: Any) {
+            self.segueToMyVC(self)
     }
+    
     @IBAction func mySavedRoutes(_ sender: Any) {
-        print(user.getMySavedRoutes())
+        self.segueToSavedVC(self)
     }
     
     func segueToSignupInVC (_ sender: Any) {
@@ -41,6 +43,22 @@ class ProfileViewController: UIViewController {
     
     func segueToHomeVC (_ sender: Any) {
         performSegue(withIdentifier: "fromProfileToHome", sender: self)
+    }
+    
+    func segueToMyVC (_ sender: Any) {
+        performSegue(withIdentifier: "profileToMy", sender: self)
+    }
+    
+    func segueToSavedVC (_ sender: Any) {
+        performSegue(withIdentifier: "profileToSaved", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as! SavedRoutesTableViewController
+        destinationVC.isMyRoutes = false
+        destinationVC.savedRoutes = user.getMySavedRoutes()
     }
     
     func getUser() {
