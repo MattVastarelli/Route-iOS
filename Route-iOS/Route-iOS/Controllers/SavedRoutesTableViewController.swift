@@ -9,6 +9,15 @@
 import UIKit
 import Firebase
 
+class SavedViewCell: UITableViewCell {
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var typeLbl: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var viewRoute: UIButton!
+}
+
+
 class SavedRoutesTableViewController: UITableViewController {
 
     var savedRoutes = Array<String>()
@@ -25,9 +34,7 @@ class SavedRoutesTableViewController: UITableViewController {
             self.getRoute(routeID: route)
         }
         self.tableView.reloadData()
-        print(self.routes)
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //print(self.routes)
     }
 
     // MARK: - Table view data source
@@ -86,6 +93,7 @@ class SavedRoutesTableViewController: UITableViewController {
             } else {
                 print("Document does not exist")
             }
+            self.tableView.reloadData()
         }
     }
     
@@ -101,7 +109,7 @@ class SavedRoutesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routeID", for: indexPath) as! SavedViewCell
 
         // Configure the cell...
         // given routePost
@@ -111,15 +119,14 @@ class SavedRoutesTableViewController: UITableViewController {
         routePost = self.routes[indexPath.row]
         
         //fill the cell
-        /*
-        cell.routeTitle?.text = routePost.getTitle()
-        cell.routeDate.text = routePost.getTrackedRoute().getDateAsString()
-        cell.routeDistance.text = routePost.getTrackedRoute().getDistanceAsString()
-        cell.routeType.text = routePost.getRoute().getActivityType()
+        cell.title.text = routePost.getTitle()
+        cell.date.text = routePost.getTrackedRoute().getDateAsString()
+        cell.distance.text = routePost.getTrackedRoute().getDistanceAsString()
+        cell.typeLbl.text = routePost.getRoute().getActivityType()
         
-        cell.viewBtn.tag = indexPath.row
-        cell.viewBtn.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
-        */
+        cell.viewRoute.tag = indexPath.row
+        cell.viewRoute.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
+ 
         
         return cell
     }
