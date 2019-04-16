@@ -17,7 +17,7 @@ class PostViewController: UIViewController {
     var route: RouteTrack = RouteTrack()
     var id = ""
     var container = Array<Any>()
-    var userContainer = Array<Any>()
+    var user = User(fName: "", lName: "")
     
     @IBOutlet weak var routeTitle: UITextField!
     @IBOutlet weak var routeDescription: UITextView!
@@ -208,11 +208,8 @@ class PostViewController: UIViewController {
         // the main route class containing the non tracking data
         let r = Route(terain: ter, locationType: loc, trafficSpeed: speed, activityType: act, attributes: attr)
         
-        // get the user from the container //hard codded for now
-        let u = User(fName: "matt", lName: "vastarelli")
-        
         //make the route post obj
-        let rPost = RoutePost(author: u, title: title ?? "my route", body: description ?? "my route", route: r, track: self.route)
+        let rPost = RoutePost(author: self.user, title: title ?? "my route", body: description ?? "my route", route: r, track: self.route)
         
         // save the post
         rPost.save()
@@ -221,8 +218,6 @@ class PostViewController: UIViewController {
         self.id = rPost.getID()
         
         self.segueToPostViewVC(self)
-        // add the route to the user document
-        //u.addRoute(id: self.id)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -231,6 +226,7 @@ class PostViewController: UIViewController {
        
         let destinationVC = segue.destination as! MyPostViewController
         destinationVC.container = self.container
+        destinationVC.user = self.user
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -238,9 +234,6 @@ class PostViewController: UIViewController {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if ((user) != nil) {
                 print(user?.email)
-                //get the user data
-                //let u = User(fName: , lName: )
-                //put it in the container
             }
             else {
                 print("not signed in")

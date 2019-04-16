@@ -63,6 +63,7 @@ class RoutePost: Post {
                 // possible call update to user
                 // add the route to the user
                 super.getAuthor().addRoute(id: ref!.documentID)
+                super.getAuthor().update()
             }
         }
     }

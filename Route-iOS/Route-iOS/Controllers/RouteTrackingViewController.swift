@@ -28,6 +28,9 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     // class to hold all the route tracking data
     let routeTracker = RouteTrack()
     
+    //
+    var user = User(fName: "", lName: "")
+    
     // init the nesscary data members
     var seconds = 0.0
     var distance = 0.0
@@ -89,12 +92,55 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if ((user) != nil) {
                 print(user?.email)
+                self.getUser(userEmail: user?.email ?? "")
             }
             else {
                 print("not signed in")
                 self.stopTracking()
                 self.segueToSignupInVC(self)
             }
+        }
+    }
+    
+    func getUser(userEmail: String){
+        //  get data
+        let db = Firestore.firestore()
+        
+        let colRef = db.collection("Users")
+        _ = colRef.getDocuments()
+            {
+                (querySnapshot, err) in
+                
+                if let err = err
+                {
+                    print("Error getting documents: \(err)");
+                }
+                else
+                {
+                    //for all the documents
+                    for document in querySnapshot!.documents {
+                        
+                        //get data
+                        let data = document.data() // main document data
+                        let email = data["email"] as! String
+                        let fName = data["first name"] as! String
+                        let lName = data["last name"] as! String
+                        
+                        let myRoutes = data["my routes"] as! Array<String>
+                        let savedRoutes = data["saved routes"] as! Array<String>
+                        
+                        
+                        if email == userEmail
+                        {
+                            self.user.setFirstName(name: fName)
+                            self.user.setLastName(name: lName)
+                            self.user.setMyRoutes(routes: myRoutes)
+                            self.user.setEmail(email: email)
+                            self.user.setMySavedRoutes(savedRoutes: savedRoutes)
+                            self.user.setID(id: document.documentID)
+                        }
+                    }
+                }
         }
     }
     
@@ -195,8 +241,10 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     {
         if segue.destination is PostViewController
         {
+            self.stopTracking()
             let pvc = segue.destination as? PostViewController
             pvc?.route = self.routeTracker
+            pvc?.user = self.user
         }
     }
     

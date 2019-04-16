@@ -19,11 +19,12 @@ class MyPostViewController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var terainLabel: UILabel!
     
-    var myPost: String = ""
     // container to hold the route passed from the post vc
     //as the ID produced by firebase does not exist till after
     // the segue
     var container = Array<Any>()
+    var user = User(fName: "", lName: "")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class MyPostViewController: UIViewController {
         self.typeLabel.text = route.getRoute().getActivityType()
         self.attributeLabel.text = route.getRoute().getAttributes().joined(separator: ", ")
         self.terainLabel.text = route.getRoute().getTerain()
+        
     }
     
 
