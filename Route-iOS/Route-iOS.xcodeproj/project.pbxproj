@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3409B0AD22582AE400699CB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409B0AC22582AE400699CB7 /* HomeViewController.swift */; };
 		3409B0B1225836EC00699CB7 /* PostWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409B0B0225836EC00699CB7 /* PostWrapper.swift */; };
+		3458C74D2266A91E00905DA4 /* MyRoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3458C74C2266A91E00905DA4 /* MyRoutesTableViewController.swift */; };
 		348F4E65223F12B9002BBD47 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348F4E64223F12B9002BBD47 /* CheckBox.swift */; };
 		348F4E67223F12D2002BBD47 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348F4E66223F12D2002BBD47 /* RadioButton.swift */; };
 		34937D232238945D0026CEE9 /* RouteTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		3409B0AC22582AE400699CB7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3409B0B0225836EC00699CB7 /* PostWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWrapper.swift; sourceTree = "<group>"; };
+		3458C74C2266A91E00905DA4 /* MyRoutesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoutesTableViewController.swift; sourceTree = "<group>"; };
 		348F4E64223F12B9002BBD47 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		348F4E66223F12D2002BBD47 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		34937D1E2238945C0026CEE9 /* RouteTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTrackingViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				34F8FA92225AB1570038991C /* ViewRouteViewController.swift */,
 				34AD657D2263CDD100F76F88 /* AuthViewController.swift */,
 				34AD65812264055700F76F88 /* SavedRoutesTableViewController.swift */,
+				3458C74C2266A91E00905DA4 /* MyRoutesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				349C8A1E2230B15B005AB6B8 /* Location.swift in Sources */,
 				349C8A1C2230B0B9005AB6B8 /* RouteTrack.swift in Sources */,
 				A0A0B6602211C5ED00810FDF /* Post.swift in Sources */,
+				3458C74D2266A91E00905DA4 /* MyRoutesTableViewController.swift in Sources */,
 				34937D242238945D0026CEE9 /* ProfileViewController.swift in Sources */,
 				3409B0AD22582AE400699CB7 /* HomeViewController.swift in Sources */,
 				348F4E67223F12D2002BBD47 /* RadioButton.swift in Sources */,

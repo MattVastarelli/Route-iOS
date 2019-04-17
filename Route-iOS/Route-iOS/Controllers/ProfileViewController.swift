@@ -56,9 +56,18 @@ class ProfileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let destinationVC = segue.destination as! SavedRoutesTableViewController
-        destinationVC.isMyRoutes = false
-        destinationVC.savedRoutes = user.getMySavedRoutes()
+        
+        if type(of: segue.destination) == SavedRoutesTableViewController.self {
+            let destinationVC = segue.destination as! SavedRoutesTableViewController
+            destinationVC.isMyRoutes = false
+            destinationVC.savedRoutes = user.getMySavedRoutes()
+        }
+        else if type(of: segue.destination) == MyRoutesTableViewController.self {
+            let destinationVC = segue.destination as! MyRoutesTableViewController
+            destinationVC.isMyRoutes = false
+            destinationVC.myRoutes = user.getMyRoutes()
+            destinationVC.user = self.user
+        }
     }
     
     func getUser() {
