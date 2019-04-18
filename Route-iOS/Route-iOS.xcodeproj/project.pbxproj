@@ -27,6 +27,7 @@
 		34A66FEA2235A84600C4FBCE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A66FE92235A84600C4FBCE /* MapKit.framework */; };
 		34AD657E2263CDD100F76F88 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD657D2263CDD100F76F88 /* AuthViewController.swift */; };
 		34AD65822264055700F76F88 /* SavedRoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD65812264055700F76F88 /* SavedRoutesTableViewController.swift */; };
+		34F160742268071F0098F491 /* Le Castle Vania - Freak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34F160732268071F0098F491 /* Le Castle Vania - Freak.mp3 */; };
 		34F8B512224C52DD00853F8D /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8B511224C52DD00853F8D /* RouteTableViewController.swift */; };
 		34F8FA93225AB1570038991C /* ViewRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8FA92225AB1570038991C /* ViewRouteViewController.swift */; };
 		558DB379407FF9BF3747B7B9 /* Pods_Route_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */; };
@@ -66,6 +67,7 @@
 		34A66FE92235A84600C4FBCE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		34AD657D2263CDD100F76F88 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		34AD65812264055700F76F88 /* SavedRoutesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRoutesTableViewController.swift; sourceTree = "<group>"; };
+		34F160732268071F0098F491 /* Le Castle Vania - Freak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Le Castle Vania - Freak.mp3"; path = "../../Le Castle Vania - Freak.mp3"; sourceTree = "<group>"; };
 		34F8B511224C52DD00853F8D /* RouteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		34F8FA92225AB1570038991C /* ViewRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouteViewController.swift; sourceTree = "<group>"; };
 		4F83E5330727A8661A948F3E /* Pods-Route-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.release.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				A0A0B63F2211B8F900810FDF /* AppDelegate.swift */,
 				A0A0B6492211B8FA00810FDF /* Assets.xcassets */,
 				A0A0B64E2211B8FA00810FDF /* Info.plist */,
+				34F160732268071F0098F491 /* Le Castle Vania - Freak.mp3 */,
 				A0A0B6462211B8F900810FDF /* Route_iOS.xcdatamodeld */,
 				A0E3C09F2212355B00534589 /* GoogleService-Info.plist */,
 			);
@@ -279,6 +282,7 @@
 				A0E3C0A02212355B00534589 /* GoogleService-Info.plist in Resources */,
 				A0A0B64A2211B8FA00810FDF /* Assets.xcassets in Resources */,
 				A0A0B6452211B8F900810FDF /* Main.storyboard in Resources */,
+				34F160742268071F0098F491 /* Le Castle Vania - Freak.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

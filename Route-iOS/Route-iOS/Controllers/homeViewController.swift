@@ -8,19 +8,41 @@
 
 import UIKit
 import Firebase
+import AVFoundation
+import EventKit
 
 class HomeViewController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
+    var toggle = true
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated:true);
+        self.navigationItem.setHidesBackButton(true, animated:true)
         
+        do {
+            let audioPath = Bundle.main.path(forResource: "Le Castle Vania - Freak", ofType: "mp3")
+            try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+        } catch {
+                print("An error has occurred")
+         }
     }
     
     func segueToSignupInVC (_ sender: Any) {
         performSegue(withIdentifier: "toSignin", sender: self)
+    }
+    
+    
+    @IBAction func music(_ sender: Any) {
+        if toggle {
+            audioPlayer.play()
+        }
+        else{
+            audioPlayer.stop()
+        }
+        
+        toggle = !toggle
     }
     
     /*override func viewWillAppear(_ animated: Bool) {
