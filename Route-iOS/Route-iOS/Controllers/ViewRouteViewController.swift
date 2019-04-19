@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class ViewRouteViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class ViewRouteViewController: UIViewController {
     var userEmail = ""
     var container = Array<Any>()
     var user = User(fName: "", lName: "")
+    //spech synth
+    let synth = AVSpeechSynthesizer()
+    var utterance = AVSpeechUtterance(string: "")
     
     @IBOutlet weak var attributeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -60,6 +64,26 @@ class ViewRouteViewController: UIViewController {
         }
         
     }
+    // speak the text from the post
+    @IBAction func speakPost(_ sender: Any) {
+        let route = container[0] as! RoutePost
+        
+        let title = route.getTitle()
+        let des = route.getPostBody()
+        let loc = route.getRoute().getLocationType()
+        let ter = route.getRoute().getTerain()
+        let speed = route.getRoute().getTrafficSpeed()
+        let actType = route.getRoute().getActivityType()
+        let attr = route.getRoute().getAttributes().joined(separator: ", and")
+        
+        let postString = title + des + "route took place in a " + loc + "environment" + ter + " this route was a " + actType + " route where The traffic was"
+            + speed + " and the current route has" + attr
+        
+        utterance = AVSpeechUtterance(string: postString)
+        utterance.rate = 0.37
+        synth.speak(utterance)
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
