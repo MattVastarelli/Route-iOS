@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Foundation
+import Social
 
 class ProfileViewController: UIViewController {
 
@@ -37,6 +39,14 @@ class ProfileViewController: UIViewController {
         self.segueToSavedVC(self)
     }
     
+    //facebook interaction
+    @IBAction func post(_ sender: Any) {
+        let facebookController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        facebookController?.setInitialText("I Am Loving RouteiOS")
+        present(facebookController!, animated: true, completion: nil)
+ 
+    }
+
     func segueToSignupInVC (_ sender: Any) {
         performSegue(withIdentifier: "fromProfileToAuth", sender: self)
     }
