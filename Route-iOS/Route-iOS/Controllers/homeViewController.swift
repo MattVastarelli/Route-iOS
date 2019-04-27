@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated:true)
         
+        
         do {
             let audioPath = Bundle.main.path(forResource: "Le Castle Vania - Freak", ofType: "mp3")
             try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
@@ -43,6 +44,16 @@ class HomeViewController: UIViewController {
         }
         
         toggle = !toggle
+    }
+    
+    func segueToProfileVC (_ sender: Any) {
+        performSegue(withIdentifier: "fromHomeToProfile", sender: self)
+    }
+ 
+    @IBAction func swipeGesture(_ gestureRecognizer: UISwipeGestureRecognizer) {
+        if gestureRecognizer.state == .ended {
+           self.segueToProfileVC(self)
+        }
     }
     
     /*override func viewWillAppear(_ animated: Bool) {
