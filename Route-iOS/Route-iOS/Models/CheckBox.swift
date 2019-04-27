@@ -1,7 +1,7 @@
 import UIKit
 
 class CheckBox: UIButton {
-
+    // most of the code was taken from stackoverflow and converted to work in swift 4
     // Images
     let checkedImage = UIImage(named: "check-box")! as UIImage
     let uncheckedImage = UIImage(named: "check-box-empty")! as UIImage
