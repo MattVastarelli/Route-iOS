@@ -49,12 +49,24 @@ class HomeViewController: UIViewController {
     func segueToProfileVC (_ sender: Any) {
         performSegue(withIdentifier: "fromHomeToProfile", sender: self)
     }
- 
+    
+    
+    func segueToTrackingVC (_ sender: Any) {
+        performSegue(withIdentifier: "fromHomeToTracking", sender: self)
+    }
+    
     @IBAction func swipeGesture(_ gestureRecognizer: UISwipeGestureRecognizer) {
         if gestureRecognizer.state == .ended {
            self.segueToProfileVC(self)
         }
     }
+    
+    @IBAction func swipeToTracking(_ gestureRecognizer: UISwipeGestureRecognizer) {
+        if gestureRecognizer.state == .ended {
+            self.segueToTrackingVC(self)
+        }
+    }
+    
     
     /*override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

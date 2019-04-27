@@ -2100,7 +2100,7 @@
                                 <items>
                                     <barButtonItem image="GPS" id="CEu-XW-Gu1">
                                         <connections>
-                                            <segue destination="qHK-cu-8i9" kind="show" id="bvu-5z-87a"/>
+                                            <segue destination="qHK-cu-8i9" kind="show" identifier="fromHomeToTracking" id="bvu-5z-87a"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Fhw-Oy-cBD"/>
@@ -2170,6 +2170,7 @@
                         <viewLayoutGuide key="safeArea" id="otK-gJ-Lc7"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="SJR-iR-0PF" appends="YES" id="Msa-by-PMY"/>
+                            <outletCollection property="gestureRecognizers" destination="9Lg-sS-eNj" appends="YES" id="sP8-D6-shJ"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Route iOs" id="u7o-TF-8pe"/>
@@ -2178,6 +2179,11 @@
                 <swipeGestureRecognizer delaysTouchesEnded="NO" direction="left" id="SJR-iR-0PF">
                     <connections>
                         <action selector="swipeGesture:" destination="aV5-bQ-4aG" id="9sf-1b-g3B"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer delaysTouchesEnded="NO" direction="down" id="9Lg-sS-eNj">
+                    <connections>
+                        <action selector="swipeToTracking:" destination="aV5-bQ-4aG" id="zv2-Yo-0tc"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -3318,7 +3324,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rWE-I5-QY6"/>
-        <segue reference="hPf-2n-u76"/>
+        <segue reference="Gb0-Fr-mWH"/>
         <segue reference="pK5-uy-seL"/>
         <segue reference="0SZ-Uu-LWV"/>
         <segue reference="9zg-wO-lVm"/>
