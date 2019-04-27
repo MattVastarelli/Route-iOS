@@ -42,6 +42,7 @@
 		A0A0B65E2211C5E000810FDF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B65D2211C5E000810FDF /* Comment.swift */; };
 		A0A0B6602211C5ED00810FDF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B65F2211C5ED00810FDF /* Post.swift */; };
 		A0A0B6622211D88100810FDF /* RoutePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0B6612211D88100810FDF /* RoutePost.swift */; };
+		A0A8DFB92274D05300B45D24 /* MainAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8DFB82274D05300B45D24 /* MainAuthViewController.swift */; };
 		A0E3C0A02212355B00534589 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0E3C09F2212355B00534589 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		A0A0B65D2211C5E000810FDF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A0A0B65F2211C5ED00810FDF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A0A0B6612211D88100810FDF /* RoutePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePost.swift; sourceTree = "<group>"; };
+		A0A8DFB82274D05300B45D24 /* MainAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuthViewController.swift; sourceTree = "<group>"; };
 		A0E3C09F2212355B00534589 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA25CE5D1D98D631C0B2A679 /* Pods_Route_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Route_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96A70871E84EC306D0A1F85 /* Pods-Route-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Route-iOS/Pods-Route-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				34AD65812264055700F76F88 /* SavedRoutesTableViewController.swift */,
 				3458C74C2266A91E00905DA4 /* MyRoutesTableViewController.swift */,
 				3458C7502266B70000905DA4 /* WebViewController.swift */,
+				A0A8DFB82274D05300B45D24 /* MainAuthViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			files = (
 				A0A0B6582211C56800810FDF /* User.swift in Sources */,
 				A0A0B6482211B8F900810FDF /* Route_iOS.xcdatamodeld in Sources */,
+				A0A8DFB92274D05300B45D24 /* MainAuthViewController.swift in Sources */,
 				A0A0B6622211D88100810FDF /* RoutePost.swift in Sources */,
 				349C8A1E2230B15B005AB6B8 /* Location.swift in Sources */,
 				349C8A1C2230B0B9005AB6B8 /* RouteTrack.swift in Sources */,

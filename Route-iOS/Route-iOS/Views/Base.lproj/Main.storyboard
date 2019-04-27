@@ -425,10 +425,10 @@
             </objects>
             <point key="canvasLocation" x="2607" y="739"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Auth View Controller-->
         <scene sceneID="AXu-0y-95K">
             <objects>
-                <viewController id="CwX-ed-fGo" sceneMemberID="viewController">
+                <viewController id="CwX-ed-fGo" customClass="MainAuthViewController" customModule="Route_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OCb-t8-Eww">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -478,13 +478,14 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="aV5-bQ-4aG" kind="show" id="qPq-TJ-nVL"/>
+                                            <segue destination="aV5-bQ-4aG" kind="show" identifier="fromAuthToHome" id="qPq-TJ-nVL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="qDG-XJ-1Pf" firstAttribute="trailing" secondItem="USS-Yu-5g0" secondAttribute="trailing" constant="16" id="6Lo-o5-w0Q"/>
                             <constraint firstItem="USS-Yu-5g0" firstAttribute="top" secondItem="qDG-XJ-1Pf" secondAttribute="top" constant="99" id="O3E-eu-Vta"/>
@@ -492,9 +493,17 @@
                             <constraint firstItem="USS-Yu-5g0" firstAttribute="leading" secondItem="qDG-XJ-1Pf" secondAttribute="leading" constant="16" id="tud-8K-BTN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qDG-XJ-1Pf"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cZp-eK-leJ" appends="YES" id="SbG-f4-Swf"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWy-aT-CBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer delaysTouchesEnded="NO" direction="up" id="cZp-eK-leJ">
+                    <connections>
+                        <action selector="SwipeToHome:" destination="CwX-ed-fGo" id="Rzg-ed-FYn"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2250" y="-47"/>
         </scene>
@@ -3324,7 +3333,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rWE-I5-QY6"/>
-        <segue reference="Gb0-Fr-mWH"/>
+        <segue reference="qPq-TJ-nVL"/>
         <segue reference="pK5-uy-seL"/>
         <segue reference="0SZ-Uu-LWV"/>
         <segue reference="9zg-wO-lVm"/>
