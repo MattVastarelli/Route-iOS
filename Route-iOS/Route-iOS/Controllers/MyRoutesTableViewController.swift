@@ -133,6 +133,8 @@ class MyRoutesTableViewController: UITableViewController {
     
     @objc func connected(sender: UIButton){
         let route = self.routes[sender.tag]
+        
+        self.container.removeAll()
         self.container.append(route)
         
         self.segueToPostViewVC(self)

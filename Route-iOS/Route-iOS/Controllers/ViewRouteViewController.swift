@@ -34,6 +34,7 @@ class ViewRouteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setLabels()
+        print("size", self.container.count)
         // Do any additional setup after loading the view.
     }
     

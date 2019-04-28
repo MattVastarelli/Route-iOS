@@ -127,6 +127,8 @@ class RouteTableViewController: UITableViewController {
     
     @objc func connected(sender: UIButton){
         let route = self.routeList[sender.tag]
+        
+        self.container.removeAll()
         self.container.append(route)
         
         if UIDevice.current.userInterfaceIdiom == .phone {
@@ -148,6 +150,9 @@ class RouteTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         let destinationVC = segue.destination as! ViewRouteViewController
+        //destinationVC.container.removeAll()
+        //print("dest size", destinationVC.container.count)
+        
         destinationVC.container = self.container
     }
  
