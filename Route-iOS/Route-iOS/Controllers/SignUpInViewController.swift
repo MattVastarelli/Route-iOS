@@ -50,5 +50,6 @@ class SignUpInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Sign Up"
     }
 }

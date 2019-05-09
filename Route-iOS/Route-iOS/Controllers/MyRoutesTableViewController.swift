@@ -30,6 +30,7 @@ class MyRoutesTableViewController: UITableViewController {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        self.title = "My Routes"
         for route in self.myRoutes {
             self.getRoute(routeID: route)
         }

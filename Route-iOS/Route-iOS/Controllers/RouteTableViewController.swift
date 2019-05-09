@@ -21,7 +21,7 @@ class RouteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Recent Routes"
         //  get data
         let db = Firestore.firestore()
         

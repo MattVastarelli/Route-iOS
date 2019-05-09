@@ -57,6 +57,7 @@ class RouteTrackingViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Route Tracking"
         self.navigationItem.setHidesBackButton(true, animated:true);
         //locationManager = CLLocationManager()
         // Ask for Authorisation from the User.

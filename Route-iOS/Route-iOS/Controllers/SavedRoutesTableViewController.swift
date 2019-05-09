@@ -28,6 +28,7 @@ class SavedRoutesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Saved Routes"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         for route in self.savedRoutes {
